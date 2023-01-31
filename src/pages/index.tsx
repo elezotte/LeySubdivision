@@ -1,15 +1,33 @@
+import { Box } from '@mui/material'
+import Image from 'next/image'
+
+const divisor = 5.5
+
 export default function Home() {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
+        marginTop: 30,
         textAlign: 'center',
-        marginTop: 240,
-        fontFamily: 'Helvetica, Arial, sans-serif',
-        fontSize: 24,
-        fontWeight: '500',
       }}
     >
-      LeySubdivision.com
-    </div>
+      <Image
+        alt="ley logo"
+        priority
+        height={Math.round(500 / divisor)}
+        width={Math.round(460 / divisor)}
+        src="/ley.png"
+      />
+      <Box
+        sx={{
+          marginTop: 2,
+          fontFamily: `'Roboto Slab', serif`,
+          fontSize: 24,
+          fontWeight: 500,
+        }}
+      >
+        LeySubdivision.com
+      </Box>
+    </Box>
   )
 }
