@@ -11,7 +11,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body style={{ fontFamily: `'Roboto Slab', serif` }}>
         <Main />
         <NextScript />
       </body>
