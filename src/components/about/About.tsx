@@ -1,20 +1,67 @@
-import MarkerIcon from '@mui/icons-material/Room'
+import { Button } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
 import GoogleMapReact, { Maps } from 'google-map-react'
+import { useState } from 'react'
 import { styles } from './about.styles'
 
+const lat = parseFloat(process.env.GOOGLE_MAPS_LAT as string)
+const lng = parseFloat(process.env.GOOGLE_MAPS_LON as string)
 const mapProps = {
   center: {
-    lat: parseFloat(process.env.GOOGLE_MAPS_LAT as string),
-    lng: parseFloat(process.env.GOOGLE_MAPS_LON as string),
+    lat,
+    lng,
   },
   zoom: 15,
 }
 
-const MapMarker = () => <MarkerIcon sx={styles.marker} />
+interface mapLatLong {
+  lat: number
+  lng: number
+}
+interface mapBounds {
+  nw: mapLatLong
+  se: mapLatLong
+  sw: mapLatLong
+  ne: mapLatLong
+}
+interface onMapChangeProps {
+  center: {
+    lat: number
+    lng: number
+  }
+  zoom: 15
+  bounds: mapBounds
+  marginBounds: mapBounds
+  size: {
+    width: number
+    height: number
+  }
+}
+
+const renderMarkers = (map: any, maps: any) =>
+  new maps.Marker({
+    position: mapProps.center,
+    map,
+  })
+const handleOnLoad = (gmap: any) => renderMarkers(gmap.map, gmap.maps)
 
 export default function About() {
+  const [center, setCenter] = useState(mapProps.center)
+  const [zoom, setZoom] = useState(mapProps.zoom)
+
+  const handleOnChange = (props: onMapChangeProps) => {
+    setZoom(props.zoom)
+    setCenter(props.center)
+  }
+  const handleMapReset = () => {
+    setCenter({
+      lat: mapProps.center.lat,
+      lng: mapProps.center.lng,
+    })
+    setZoom(mapProps.zoom)
+  }
+
   return (
     <>
       <Box sx={commonStyles.pageContent}>
@@ -27,8 +74,10 @@ export default function About() {
               key: process.env.GOOGLE_MAPS_API_KEY,
             } as GoogleMapReact.BootstrapURLKeys
           }
-          defaultCenter={mapProps.center}
-          defaultZoom={mapProps.zoom}
+          center={center}
+          zoom={zoom}
+          onGoogleApiLoaded={handleOnLoad}
+          onChange={handleOnChange}
           options={(maps: Maps) => ({
             fullscreenControl: false,
             mapTypeControl: true,
@@ -43,10 +92,15 @@ export default function About() {
               ],
             },
           })}
+        />
+        <Button
+          color="secondary"
+          onClick={handleMapReset}
+          sx={styles.resetButton}
+          variant="contained"
         >
-          {/* @ts-ignore */}
-          <MapMarker position={mapProps.center} />
-        </GoogleMapReact>
+          Reset View
+        </Button>
       </Box>
     </>
   )
