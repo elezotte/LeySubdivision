@@ -4,14 +4,15 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" type="image/png" href="./logo.fat.white.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body style={{ fontFamily: `'Roboto Slab', serif` }}>
+      <body>
         <Main />
         <NextScript />
       </body>

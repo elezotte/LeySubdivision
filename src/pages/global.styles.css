@@ -1,0 +1,10 @@
+html,
+body,
+div#__next {
+  height: 100%;
+}
+
+div#__next {
+  display: flex;
+  flex-direction: column;
+}
