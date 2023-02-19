@@ -1,55 +1,106 @@
-import {
-  colors,
-  font,
-  MuiSxStyles,
-  ReactStyles,
-} from 'components/theme/themeSettings'
+import { SxProps } from '@mui/material'
+import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
-const commonNavItemStyles: React.CSSProperties = {
+const commonButtonItemStyles: SxProps = {
   fontFamily: font.family.logo,
   fontWeight: 400,
+  borderRadius: 0,
   fontSize: font.size.ML,
-  paddingTop: 16,
-  paddingBottom: 16,
-  paddingLeft: 8,
-  paddingRight: 8,
-  marginLeft: 12,
-  marginRight: 12,
-  marginBottom: -2,
+  paddingY: 2,
+  paddingX: 1,
+  marginX: 1.5,
+  marginTop: 0,
+  marginBottom: '-2px',
   textDecoration: 'none',
   borderBottomStyle: 'solid',
   borderBottomWidth: 2,
+  textTransform: 'none',
+  lineHeight: 1,
+  minHeight: 58,
 }
 
-export const navItemStyles: ReactStyles = {
-  selected: {
-    borderBottomColor: colors.gray.medium,
-    color: colors.gray.dark,
-    ...commonNavItemStyles,
-  },
-  notSelected: {
-    borderBottomColor: 'transparent',
-    color: colors.gray.medium,
-    ...commonNavItemStyles,
-  },
+const commonMenuItemStyles: SxProps = {
+  fontFamily: font.family.logo,
+  fontWeight: 400,
+  fontSize: font.size.MD,
+  color: colors.gray.medium,
 }
 
 export const styles: MuiSxStyles = {
-  container: {
+  appBar: {
+    paddingX: 0,
+    backgroundColor: colors.background,
+    boxShadow: 'none',
     display: 'flex',
     alignItems: 'center',
-    paddingLeft: 3.5,
     borderBottom: `2px solid ${colors.gray.xlight}`,
+  },
+  buttonContainer: {
+    flexGrow: 1,
+    display: {
+      xs: 'none',
+      md: 'flex',
+    },
   },
   leyText: {
     fontFamily: font.family.logo,
     marginLeft: 1,
-    marginRight: 6,
     fontSize: font.size.LG,
     fontWeight: 700,
     color: '#000',
   },
+  logoContainerButtons: {
+    display: {
+      xs: 'none',
+      md: 'flex',
+    },
+    marginRight: 6,
+    marginLeft: 1,
+  },
+  logoContainerMenu: {
+    display: {
+      xs: 'flex',
+      md: 'none',
+    },
+    marginRight: 1,
+  },
+  menu: {
+    display: {
+      xs: 'block',
+      md: 'none',
+    },
+  },
+  menuContainer: {
+    flexGrow: 1,
+    display: { xs: 'flex', md: 'none' },
+  },
   pageContent: {
     padding: 4,
+  },
+  selected: {
+    borderBottomColor: colors.gray.medium,
+    color: colors.gray.dark,
+    ...commonButtonItemStyles,
+  },
+  notSelected: {
+    borderBottomColor: 'transparent',
+    ...commonButtonItemStyles,
+  },
+  selectedMenu: {
+    backgroundColor: colors.gray.mediumLight,
+    '&:hover': {
+      backgroundColor: colors.gray.mediumLight,
+    },
+    color: 'red',
+    ...commonMenuItemStyles,
+  },
+  notSelectedMenu: {
+    '&:hover': {
+      backgroundColor: colors.gray.xlight,
+    },
+    ...commonMenuItemStyles,
+  },
+  toolbar: {
+    minHeight: 'auto',
   },
 }

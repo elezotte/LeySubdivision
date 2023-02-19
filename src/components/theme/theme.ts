@@ -111,6 +111,17 @@ const theme = createTheme({
         },
       },
     },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          minHeight: 56,
+
+          '@media (min-width: 600px)': {
+            minHeight: 56,
+          },
+        },
+      },
+    },
   },
   typography: {
     fontSize: font.size.MD,

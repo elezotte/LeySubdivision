@@ -1,8 +1,16 @@
+import MenuIcon from '@mui/icons-material/Menu'
+import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Toolbar from '@mui/material/Toolbar'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { navItemStyles, styles } from './navigation.styles'
+import { useState } from 'react'
+import { styles } from './navigation.styles'
 
 interface NavigationProps {
   children: React.ReactNode
@@ -37,40 +45,104 @@ const navItems = [
   },
 ]
 
+const Logo: React.FC = () => (
+  <Box sx={{ display: 'flex' }}>
+    <Image
+      alt="ley logo"
+      priority
+      height={Math.round(350 / logoDivisor)}
+      width={Math.round(362 / logoDivisor)}
+      src="/logo.fat.png"
+    />
+    <Box sx={styles.leyText}>Ley Subdivision</Box>
+  </Box>
+)
+
 const Navigation: React.FC<NavigationProps> = ({
   children,
 }: NavigationProps) => {
   const router = useRouter()
-  const handleClick = (path: string) => () => router.push(path)
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
+
+  const handleClick = (path: string) => () => {
+    handleCloseMenu()
+    router.push(path)
+  }
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget)
+  }
+  const handleCloseMenu = () => {
+    setAnchorElNav(null)
+  }
 
   return (
     <>
-      <Box sx={styles.container}>
-        <Box>
-          <Image
-            alt="ley logo"
-            priority
-            height={Math.round(350 / logoDivisor)}
-            width={Math.round(362 / logoDivisor)}
-            src="/logo.fat.png"
-          />
-        </Box>
-        <Box sx={styles.leyText}>Ley Subdivision</Box>
-        {navItems.map((navItem) => (
-          <Link
-            href={navItem.path}
-            key={navItem.id}
-            style={{
-              ...(router.pathname === navItem.path
-                ? navItemStyles.selected
-                : navItemStyles.notSelected),
-            }}
-            onClick={handleClick(navItem.path)}
-          >
-            {navItem.label}
-          </Link>
-        ))}
-      </Box>
+      <AppBar position="static" sx={styles.appBar}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Box sx={styles.logoContainerButtons}>
+              <Logo />
+            </Box>
+            <Box sx={styles.menuContainer}>
+              <IconButton
+                size="large"
+                aria-haspopup="true"
+                onClick={handleOpenMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseMenu}
+                sx={styles.menu}
+              >
+                {navItems.map((navItem) => (
+                  <MenuItem
+                    key={navItem.id}
+                    onClick={handleClick(navItem.path)}
+                    sx={{
+                      ...(router.pathname === navItem.path
+                        ? styles.selectedMenu
+                        : styles.notSelectedMenu),
+                    }}
+                  >
+                    {navItem.label}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            <Box sx={styles.logoContainerMenu}>
+              <Logo />
+            </Box>
+            <Box sx={styles.buttonContainer}>
+              {navItems.map((navItem) => (
+                <Button
+                  key={navItem.id}
+                  onClick={handleClick(navItem.path)}
+                  sx={{
+                    ...(router.pathname === navItem.path
+                      ? styles.selected
+                      : styles.notSelected),
+                  }}
+                >
+                  {navItem.label}
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
       {children}
     </>
   )
