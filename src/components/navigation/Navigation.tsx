@@ -83,7 +83,7 @@ const Navigation: React.FC<NavigationProps> = ({
               size="large"
               aria-haspopup="true"
               onClick={handleOpenMenu}
-              color="inherit"
+              sx={styles.menuIcon}
             >
               <MenuIcon />
             </IconButton>

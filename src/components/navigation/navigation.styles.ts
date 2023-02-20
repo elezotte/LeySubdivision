@@ -32,7 +32,7 @@ export const styles: MuiSxStyles = {
     backgroundColor: colors.background,
     boxShadow: 'none',
     display: 'flex',
-    borderBottom: `2px solid ${colors.gray.xlight}`,
+    borderBottom: `2px solid ${colors.gray.light}`,
   },
   buttonContainer: {
     flexGrow: 1,
@@ -78,6 +78,9 @@ export const styles: MuiSxStyles = {
   menuContainer: {
     flexGrow: 1,
     display: { xs: 'flex', md: 'none' },
+  },
+  menuIcon: {
+    color: colors.gray.dark,
   },
   pageContent: {
     padding: 4,
