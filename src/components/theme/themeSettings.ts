@@ -18,10 +18,10 @@ export const colors = {
     dark: '#1d8ee5',
   },
   gray: {
-    xlight: '#ddd2c1',
-    light: '#c5bbac',
+    xlight: '#f7ead8',
+    light: '#ded3c2',
     mediumLight: '#aca396',
-    medium: '#787269',
+    medium: '#777168',
     mediumDark: '#5e5952',
     dark: '#2b2926',
   },

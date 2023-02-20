@@ -3,7 +3,7 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 const googleButtonStyles: SxProps = {
   backgroundColor: colors.background,
-  color: '#666',
+  color: colors.gray.mediumDark,
   fontWeight: 500,
   fontSize: font.size.MD,
   textTransform: 'none',
@@ -32,11 +32,11 @@ export const styles: MuiSxStyles = {
   typeButton: googleButtonStyles,
   typeButtonSelected: {
     ...googleButtonStyles,
-    backgroundColor: '#ddd',
-    color: '#777',
+    backgroundColor: colors.gray.xlight,
+    color: colors.gray.medium,
     '&:hover': {
-      backgroundColor: '#ddd',
-      color: '#777',
+      backgroundColor: colors.gray.xlight,
+      color: colors.gray.medium,
     },
   },
   resetButton: {

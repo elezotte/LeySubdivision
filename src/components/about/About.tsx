@@ -4,52 +4,7 @@ import { commonStyles } from 'components/common.styles'
 import GoogleMapReact, { Maps } from 'google-map-react'
 import { useState } from 'react'
 import { styles } from './about.styles'
-
-interface mapLatLong {
-  lat: number
-  lng: number
-}
-interface mapBounds {
-  nw: mapLatLong
-  se: mapLatLong
-  sw: mapLatLong
-  ne: mapLatLong
-}
-interface MapChangeProps {
-  center: {
-    lat: number
-    lng: number
-  }
-  zoom: 15
-  bounds: mapBounds
-  marginBounds: mapBounds
-  size: {
-    width: number
-    height: number
-  }
-}
-enum MapTypes {
-  ROADMAP = 'roadmap',
-  SATELLITE = 'satellite',
-  HYBRID = 'hybrid',
-  TERRAIN = 'terrain',
-}
-
-const MapTypeText = {
-  [MapTypes.ROADMAP]: 'Road',
-  [MapTypes.SATELLITE]: 'Satellite',
-  [MapTypes.HYBRID]: 'Hybrid',
-  [MapTypes.TERRAIN]: 'Terrain',
-}
-const lat = parseFloat(process.env.GOOGLE_MAPS_LAT as string)
-const lng = parseFloat(process.env.GOOGLE_MAPS_LON as string)
-const mapProps = {
-  center: {
-    lat,
-    lng,
-  },
-  zoom: 15,
-}
+import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
 
 const renderMarkers = (map: any, maps: any) =>
   new maps.Marker({
@@ -73,7 +28,6 @@ export default function About() {
     setCenter(props.center)
   }
   const handleTypeChange = (newType: MapTypes) => {
-    console.log('newType', newType)
     setType(newType)
   }
   const handleMapReset = () => {
@@ -117,7 +71,6 @@ export default function About() {
           })}
         />
         <Button
-          color="secondary"
           onClick={handleMapReset}
           sx={styles.resetButton}
           variant="contained"
@@ -127,7 +80,6 @@ export default function About() {
         <ButtonGroup sx={styles.typeButtonGroup} orientation="vertical">
           {Object.entries(MapTypes).map((buttonType) => (
             <Button
-              color="secondary"
               onClick={() => handleTypeChange(buttonType[1])}
               key={buttonType[1]}
               sx={getTypeStyles(type, buttonType[1])}

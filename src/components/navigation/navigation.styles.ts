@@ -20,9 +20,9 @@ const commonButtonItemStyles: SxProps = {
 }
 
 const commonMenuItemStyles: SxProps = {
-  fontFamily: font.family.logo,
+  fontFamily: font.family.body,
   fontWeight: 400,
-  fontSize: font.size.MD,
+  fontSize: font.size.ML,
   color: colors.gray.medium,
 }
 
@@ -46,7 +46,7 @@ export const styles: MuiSxStyles = {
     marginLeft: 1,
     fontSize: font.size.LG,
     fontWeight: 700,
-    color: '#000',
+    color: colors.gray.dark,
   },
   logoContainerButtons: {
     display: {
@@ -86,11 +86,10 @@ export const styles: MuiSxStyles = {
     ...commonButtonItemStyles,
   },
   selectedMenu: {
-    backgroundColor: colors.gray.mediumLight,
+    backgroundColor: colors.gray.light,
     '&:hover': {
-      backgroundColor: colors.gray.mediumLight,
+      backgroundColor: colors.gray.light,
     },
-    color: 'red',
     ...commonMenuItemStyles,
   },
   notSelectedMenu: {
