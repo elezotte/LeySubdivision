@@ -6,30 +6,23 @@ import { useState } from 'react'
 import { styles } from './about.styles'
 import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
 
-const renderMarkers = (map: any, maps: any) =>
-  new maps.Marker({
-    position: mapProps.center,
-    map,
-  })
-const handleOnLoad = (gmap: any) => renderMarkers(gmap.map, gmap.maps)
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
   return selectedType === buttonType
     ? styles.typeButtonSelected
     : styles.typeButton
 }
+const handleOnLoad = (gmap: any) => renderMarkers(gmap.map, gmap.maps)
+const renderMarkers = (map: any, maps: any) =>
+  new maps.Marker({
+    position: mapProps.center,
+    map,
+  })
 
 export default function About() {
   const [center, setCenter] = useState(mapProps.center)
-  const [zoom, setZoom] = useState(mapProps.zoom)
   const [type, setType] = useState(MapTypes.TERRAIN)
+  const [zoom, setZoom] = useState(mapProps.zoom)
 
-  const handleOnChange = (props: MapChangeProps) => {
-    setZoom(props.zoom)
-    setCenter(props.center)
-  }
-  const handleTypeChange = (newType: MapTypes) => {
-    setType(newType)
-  }
   const handleMapReset = () => {
     setCenter({
       lat: mapProps.center.lat,
@@ -37,6 +30,13 @@ export default function About() {
     })
     setZoom(mapProps.zoom)
     setType(MapTypes.TERRAIN)
+  }
+  const handleOnChange = (props: MapChangeProps) => {
+    setZoom(props.zoom)
+    setCenter(props.center)
+  }
+  const handleTypeChange = (newType: MapTypes) => {
+    setType(newType)
   }
 
   return (
@@ -52,13 +52,11 @@ export default function About() {
             } as GoogleMapReact.BootstrapURLKeys
           }
           center={center}
-          zoom={zoom}
-          onGoogleApiLoaded={handleOnLoad}
           onChange={handleOnChange}
+          onGoogleApiLoaded={handleOnLoad}
           options={(maps: Maps) => ({
             fullscreenControl: false,
             mapTypeControl: false,
-            mapTypeId: type,
             mapTypeControlOptions: {
               style: maps.MapTypeControlStyle.DROPDOWN_MENU,
               position: maps.ControlPosition.TOP_LEFT,
@@ -68,7 +66,9 @@ export default function About() {
                 maps.MapTypeId.TERRAIN,
               ],
             },
+            mapTypeId: type,
           })}
+          zoom={zoom}
         />
         <Button
           onClick={handleMapReset}
@@ -77,11 +77,11 @@ export default function About() {
         >
           Reset
         </Button>
-        <ButtonGroup sx={styles.typeButtonGroup} orientation="vertical">
+        <ButtonGroup orientation="vertical" sx={styles.typeButtonGroup}>
           {Object.entries(MapTypes).map((buttonType) => (
             <Button
-              onClick={() => handleTypeChange(buttonType[1])}
               key={buttonType[1]}
+              onClick={() => handleTypeChange(buttonType[1])}
               sx={getTypeStyles(type, buttonType[1])}
               variant="contained"
             >

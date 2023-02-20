@@ -85,9 +85,9 @@ const theme = createTheme({
         },
         h3: {
           fontSize: font.size.LG,
-          fontWeight: font.weight.SEMIBOLD,
+          fontWeight: font.weight.REGULAR,
           color: colors.gray.medium,
-          marginBottom: '16px',
+          marginBottom: '8px',
         },
         body1: {
           fontSize: font.size.MD,
