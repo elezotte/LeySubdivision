@@ -25,6 +25,7 @@ const Weather: React.FC = () => {
         data={data}
         lang="en"
         showForecast
+        unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
       />
     </Box>
   )
