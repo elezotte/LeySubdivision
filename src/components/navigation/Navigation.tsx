@@ -14,7 +14,7 @@ import { styles } from './navigation.styles'
 interface NavigationProps {
   children: React.ReactNode
 }
-const logoDivisor = 13
+const logoDivisor = 14
 
 const navItems = [
   {

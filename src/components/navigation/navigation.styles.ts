@@ -67,7 +67,7 @@ export const styles: MuiSxStyles = {
     marginRight: 1,
   },
   logoIcon: {
-    marginTop: '1px',
+    marginTop: '2px',
   },
   menu: {
     display: {
