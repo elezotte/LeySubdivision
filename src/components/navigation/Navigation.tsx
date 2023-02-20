@@ -23,19 +23,14 @@ const navItems = [
     label: 'About',
   },
   {
-    id: 'documents',
-    path: '/documents',
-    label: 'Documents',
+    id: 'information',
+    path: '/information',
+    label: 'Information',
   },
   {
     id: 'contacts',
     path: '/contacts',
     label: 'Contacts',
-  },
-  {
-    id: 'information',
-    path: '/information',
-    label: 'Information',
   },
   {
     id: 'weather',

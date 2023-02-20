@@ -7,6 +7,12 @@ import ItemList, {
 
 const neighborhoodItems: ListItem[] = [
   {
+    id: 'ley-subdivision-covenants',
+    label: 'Covenants',
+    path: '/documents/ley-subdivision-covenants.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+  {
     id: 'ley-subdivision-plot-map',
     label: 'Original Subdivision Plot Map',
     path: '/images/ley-subdivision-plot-map.jpg',

@@ -1,5 +1,7 @@
-import DocumentIcon from '@mui/icons-material/Description'
-import PhotoIcon from '@mui/icons-material/PhotoOutlined'
+import EmailIcon from '@mui/icons-material/AlternateEmail'
+import DocumentIcon from '@mui/icons-material/DescriptionOutlined'
+import PhotoIcon from '@mui/icons-material/PhoneOutlined'
+import PhoneIcon from '@mui/icons-material/PhotoOutlined'
 import WebsiteIcon from '@mui/icons-material/Wysiwyg'
 import Link from '@mui/material/Link'
 import List from '@mui/material/List'
@@ -11,23 +13,27 @@ import { reactStyles, styles } from './itemList.styles'
 
 export enum ListIconTypes {
   DOCUMENT = 'document',
+  EMAIL = 'email',
+  PHONE = 'phone',
   PHOTO = 'photo',
   WEBSITE = 'website',
 }
 const icons = {
   [ListIconTypes.DOCUMENT]: <DocumentIcon sx={styles.listIcon} />,
+  [ListIconTypes.EMAIL]: <EmailIcon sx={styles.listIcon} />,
+  [ListIconTypes.PHONE]: <PhotoIcon sx={styles.listIcon} />,
+  [ListIconTypes.PHOTO]: <PhoneIcon sx={styles.listIcon} />,
   [ListIconTypes.WEBSITE]: <WebsiteIcon sx={styles.listIcon} />,
-  [ListIconTypes.PHOTO]: <PhotoIcon sx={styles.listIcon} />,
 }
 export interface ListItem {
-  id: string
   iconType: ListIconTypes
-  path: string
+  id: string
   label: string
+  path: string
 }
 interface ItemListProps {
-  title: string
   items: ListItem[]
+  title: string
 }
 
 const ItemList: React.FC<ItemListProps> = ({ title, items }: ItemListProps) => {
