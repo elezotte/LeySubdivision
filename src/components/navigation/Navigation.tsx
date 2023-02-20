@@ -40,14 +40,16 @@ const navItems = [
 ]
 
 const Logo: React.FC = () => (
-  <Box sx={{ display: 'flex' }}>
-    <Image
-      alt="ley logo"
-      priority
-      height={Math.round(350 / logoDivisor)}
-      width={Math.round(362 / logoDivisor)}
-      src="/logo.fat.png"
-    />
+  <Box sx={styles.logo}>
+    <Box sx={styles.logoIcon}>
+      <Image
+        alt="ley logo"
+        priority
+        height={Math.round(350 / logoDivisor)}
+        width={Math.round(362 / logoDivisor)}
+        src="/logo.fat.png"
+      />
+    </Box>
     <Box sx={styles.leyText}>Ley Subdivision</Box>
   </Box>
 )

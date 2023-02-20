@@ -37,12 +37,12 @@ export const font = {
     body: '"Roboto", sans-serif',
   },
   size: {
-    SM: 8,
-    MS: 12,
-    MD: 14,
-    ML: 18,
-    LG: 22,
-    XL: 26,
+    SM: 9,
+    MS: 13,
+    MD: 15,
+    ML: 19,
+    LG: 23,
+    XL: 27,
   },
   weight: {
     LIGHT: 100,

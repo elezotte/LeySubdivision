@@ -6,8 +6,8 @@ const commonButtonItemStyles: SxProps = {
   fontWeight: 400,
   borderRadius: 0,
   fontSize: font.size.ML,
-  paddingY: 2,
-  paddingX: 1,
+  paddingY: 0,
+  paddingX: 0,
   marginX: 1.5,
   marginTop: 0,
   marginBottom: '-2px',
@@ -16,7 +16,7 @@ const commonButtonItemStyles: SxProps = {
   borderBottomWidth: 2,
   textTransform: 'none',
   lineHeight: 1,
-  minHeight: 58,
+  minHeight: 52,
 }
 
 const commonMenuItemStyles: SxProps = {
@@ -48,6 +48,9 @@ export const styles: MuiSxStyles = {
     fontWeight: 700,
     color: colors.gray.dark,
   },
+  logo: {
+    display: 'flex',
+  },
   logoContainerButtons: {
     display: {
       xs: 'none',
@@ -62,6 +65,9 @@ export const styles: MuiSxStyles = {
       md: 'none',
     },
     marginRight: 1,
+  },
+  logoIcon: {
+    marginTop: '1px',
   },
   menu: {
     display: {
