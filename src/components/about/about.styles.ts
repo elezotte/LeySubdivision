@@ -3,10 +3,14 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 const googleButtonStyles: SxProps = {
   backgroundColor: colors.background,
+  // boxShadow: `1px 1px 1px 0px ${colors.gray.mediumLight}`,
   color: colors.gray.mediumDark,
   fontWeight: 500,
   fontSize: font.size.MD,
   textTransform: 'none',
+  border: `1px solid ${colors.gray.light}`,
+  paddingX: 1,
+  paddingY: 0.5,
 
   '&:hover': {
     color: colors.gray.dark,
@@ -15,6 +19,12 @@ const googleButtonStyles: SxProps = {
 }
 
 export const styles: MuiSxStyles = {
+  directionsButton: {
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+    ...googleButtonStyles,
+  },
   map: {
     height: 300,
     borderTop: `1px solid ${colors.gray.xlight}`,
@@ -29,7 +39,10 @@ export const styles: MuiSxStyles = {
     top: 10,
     left: 10,
   },
-  typeButton: googleButtonStyles,
+  typeButton: {
+    ...googleButtonStyles,
+    width: 87,
+  },
   typeButtonSelected: {
     ...googleButtonStyles,
     backgroundColor: colors.gray.xlight,

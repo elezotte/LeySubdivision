@@ -93,6 +93,14 @@ export default function About() {
             </Button>
           ))}
         </ButtonGroup>
+        <Button
+          sx={styles.directionsButton}
+          href="https://goo.gl/maps/i1XpKZf4TFT6L9Zj7"
+          target="directions"
+          variant="contained"
+        >
+          Directions
+        </Button>
       </Box>
     </>
   )
