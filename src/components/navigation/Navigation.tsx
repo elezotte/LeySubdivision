@@ -2,7 +2,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -78,70 +77,68 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <>
       <AppBar position="static" sx={styles.appBar}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box sx={styles.logoContainerButtons}>
-              <Logo />
-            </Box>
-            <Box sx={styles.menuContainer}>
-              <IconButton
-                size="large"
-                aria-haspopup="true"
-                onClick={handleOpenMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseMenu}
-                sx={styles.menu}
-              >
-                {navItems.map((navItem) => (
-                  <MenuItem
-                    key={navItem.id}
-                    onClick={handleClick(navItem.path)}
-                    sx={{
-                      ...(router.pathname === navItem.path
-                        ? styles.selectedMenu
-                        : styles.notSelectedMenu),
-                    }}
-                  >
-                    {navItem.label}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Box sx={styles.logoContainerMenu}>
-              <Logo />
-            </Box>
-            <Box sx={styles.buttonContainer}>
+        <Toolbar disableGutters>
+          <Box sx={styles.logoContainerButtons}>
+            <Logo />
+          </Box>
+          <Box sx={styles.menuContainer}>
+            <IconButton
+              size="large"
+              aria-haspopup="true"
+              onClick={handleOpenMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseMenu}
+              sx={styles.menu}
+            >
               {navItems.map((navItem) => (
-                <Button
+                <MenuItem
                   key={navItem.id}
                   onClick={handleClick(navItem.path)}
                   sx={{
                     ...(router.pathname === navItem.path
-                      ? styles.selected
-                      : styles.notSelected),
+                      ? styles.selectedMenu
+                      : styles.notSelectedMenu),
                   }}
                 >
                   {navItem.label}
-                </Button>
+                </MenuItem>
               ))}
-            </Box>
-          </Toolbar>
-        </Container>
+            </Menu>
+          </Box>
+          <Box sx={styles.logoContainerMenu}>
+            <Logo />
+          </Box>
+          <Box sx={styles.buttonContainer}>
+            {navItems.map((navItem) => (
+              <Button
+                key={navItem.id}
+                onClick={handleClick(navItem.path)}
+                sx={{
+                  ...(router.pathname === navItem.path
+                    ? styles.selected
+                    : styles.notSelected),
+                }}
+              >
+                {navItem.label}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
       </AppBar>
       {children}
     </>

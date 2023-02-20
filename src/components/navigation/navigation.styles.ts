@@ -28,11 +28,10 @@ const commonMenuItemStyles: SxProps = {
 
 export const styles: MuiSxStyles = {
   appBar: {
-    paddingX: 0,
+    paddingX: 3,
     backgroundColor: colors.background,
     boxShadow: 'none',
     display: 'flex',
-    alignItems: 'center',
     borderBottom: `2px solid ${colors.gray.xlight}`,
   },
   buttonContainer: {
