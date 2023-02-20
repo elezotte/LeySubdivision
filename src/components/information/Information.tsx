@@ -4,6 +4,7 @@ import ItemList, {
   ListIconTypes,
   ListItem,
 } from 'components/common/itemList/ItemList'
+import Head from 'next/head'
 
 const neighborhoodItems: ListItem[] = [
   {
@@ -64,6 +65,9 @@ const historicalItems: ListItem[] = [
 
 const Documents = () => (
   <Box sx={commonStyles.pageContent}>
+    <Head>
+      <title>Ley Subdivision Information</title>
+    </Head>
     <ItemList items={neighborhoodItems} title="Neighborhood" />
     <ItemList items={custerCountyItems} title="Custer County" />
     <ItemList items={historicalItems} title="Historical" />

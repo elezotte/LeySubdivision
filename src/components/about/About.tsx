@@ -2,6 +2,7 @@ import { Button, ButtonGroup } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
 import GoogleMapReact, { Maps } from 'google-map-react'
+import Head from 'next/head'
 import { useState } from 'react'
 import { styles } from './about.styles'
 import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
@@ -41,6 +42,9 @@ export default function About() {
 
   return (
     <>
+      <Head>
+        <title>About the Ley Subdivision</title>
+      </Head>
       <Box sx={commonStyles.pageContent}>
         Some text about the area could go here
       </Box>

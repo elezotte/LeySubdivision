@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="description" content="Ley Subdivision, Westcliffe CO" />
+        <link rel="canonical" href="https://leysubdivision.com" />
         <link rel="icon" type="image/png" href="./logo.fat.white.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
