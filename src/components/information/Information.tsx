@@ -69,7 +69,7 @@ const Documents = () => (
       <title>Ley Subdivision Information</title>
     </Head>
     <ItemList items={neighborhoodItems} title="Neighborhood" />
-    <ItemList items={custerCountyItems} title="Custer County" />
+    <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
     <ItemList items={historicalItems} title="Historical" />
   </Box>
 )
