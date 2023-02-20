@@ -84,12 +84,16 @@ export const styles: MuiSxStyles = {
   },
   selected: {
     borderBottomColor: colors.gray.medium,
-    color: colors.gray.dark,
     ...commonButtonItemStyles,
+    color: colors.gray.dark,
   },
   notSelected: {
-    borderBottomColor: 'transparent',
     ...commonButtonItemStyles,
+    borderBottomColor: 'transparent',
+
+    '&:hover': {
+      color: colors.river.light,
+    },
   },
   selectedMenu: {
     backgroundColor: colors.gray.light,

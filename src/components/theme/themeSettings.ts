@@ -14,8 +14,9 @@ export const colors = {
     medium: '#1dbc33',
   },
   river: {
-    medium: '#49b0ff',
-    dark: '#1d8ee5',
+    light: '#32a6ff',
+    medium: '#2884cc',
+    dark: '#1e6398',
   },
   gray: {
     xlight: '#f7ead8',

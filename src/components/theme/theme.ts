@@ -35,7 +35,7 @@ const theme = createTheme({
     },
     action: {
       active: colors.river.dark,
-      hover: colors.gray.medium,
+      hover: colors.river.light,
     },
     background: {
       default: colors.background,
@@ -64,7 +64,7 @@ const theme = createTheme({
           cursor: 'pointer',
           color: colors.river.dark,
           '&:hover': {
-            color: colors.gray.light,
+            color: colors.river.light,
           },
         },
       },
