@@ -1,6 +1,7 @@
-import { Grid } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import CircularProgress from '@mui/material/CircularProgress'
+import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 import { commonStyles } from 'components/common.styles'
 import Head from 'next/head'
@@ -13,6 +14,7 @@ const Contacts = () => {
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const clearInputs = () => {
     setEmail('')
@@ -28,6 +30,7 @@ const Contacts = () => {
 
   const handleSendMessage = async (e: MouseEvent) => {
     e.preventDefault()
+    setSending(true)
 
     const emailData = {
       name,
@@ -52,10 +55,12 @@ const Contacts = () => {
     })
 
     setSent(true)
+    setSending(false)
     clearInputs()
   }
 
-  const buttonDisabled = !email.length || !name.length || !message.length
+  const buttonDisabled =
+    !email.length || !name.length || !message.length || sending
 
   return (
     <Box sx={commonStyles.pageContent}>
@@ -111,11 +116,17 @@ const Contacts = () => {
         />
         <Grid container sx={styles.buttons}>
           <Grid xs={6}>
-            <Button color="secondary" onClick={handleClear} variant="contained">
+            <Button
+              color="secondary"
+              disabled={sending}
+              onClick={handleClear}
+              variant="contained"
+            >
               Clear Form
             </Button>
           </Grid>
           <Grid xs={6} sx={styles.submitButtonContainer}>
+            {sending && <CircularProgress size={23} sx={styles.sending} />}
             <Button
               color="primary"
               disabled={buttonDisabled}

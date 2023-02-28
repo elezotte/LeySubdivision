@@ -14,6 +14,11 @@ export const styles: MuiSxStyles = {
   input: {
     marginBottom: 2,
   },
+  sending: {
+    position: 'absolute',
+    right: 48,
+    top: 7,
+  },
   sent: {
     color: colors.grass.medium,
     fontWeight: font.weight.SEMIBOLD,
@@ -23,6 +28,7 @@ export const styles: MuiSxStyles = {
     marginLeft: 2,
   },
   submitButtonContainer: {
+    position: 'relative',
     textAlign: 'right',
   },
 }
