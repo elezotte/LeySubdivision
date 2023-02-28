@@ -1,12 +1,11 @@
 import { Button, ButtonGroup, Grid } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
-import { colors, font } from 'components/theme/themeSettings'
 import GoogleMapReact, { Maps } from 'google-map-react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import { styles } from './about.styles'
+import { reactStyles, styles } from './about.styles'
 import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
 
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
@@ -49,20 +48,7 @@ export default function About() {
         <title>About the Ley Subdivision</title>
       </Head>
       <Grid container sx={commonStyles.pageContent}>
-        <Grid
-          item
-          sx={{
-            fontSize: font.size.ML,
-            backgroundColor: colors.gray.light,
-            color: colors.gray.dark,
-            paddingX: 6,
-            paddingY: 3,
-            borderTopLeftRadius: 6,
-            borderBottomLeftRadius: 6,
-          }}
-          xs={12}
-          md={6}
-        >
+        <Grid item sx={styles.text} xs={12} md={6}>
           <p>
             The Ley subdivision is located near the town of Westcliffe Colorado,
             between the Sangre De Cristo and Wet Mountain ranges, within the Wet
@@ -80,27 +66,14 @@ export default function About() {
             Salida, Canon City, and Pueblo.
           </p>
         </Grid>
-        <Grid
-          item
-          sx={{
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-          display={{ xs: 'none', md: 'block' }}
-          md={6}
-        >
+        <Grid item sx={styles.imageContainer} md={6}>
           <a href="/images/photo2.jpg" target="_blank">
             <Image
               alt="Ley Subdivision Plat Map"
               fill
               priority
               src="/images/photo2.jpg"
-              style={{
-                objectFit: 'cover',
-                border: `4px solid ${colors.gray.light}`,
-                borderTopRightRadius: 10,
-                borderBottomRightRadius: 10,
-              }}
+              style={reactStyles.image}
             />
           </a>
         </Grid>

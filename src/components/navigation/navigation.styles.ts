@@ -77,7 +77,10 @@ export const styles: MuiSxStyles = {
   },
   menuContainer: {
     flexGrow: 1,
-    display: { xs: 'flex', md: 'none' },
+    display: {
+      xs: 'flex',
+      md: 'none',
+    },
   },
   menuIcon: {
     color: colors.gray.dark,
