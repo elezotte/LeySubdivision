@@ -30,7 +30,7 @@ const navItems = [
   {
     id: 'contacts',
     path: '/contacts',
-    label: 'Contacts',
+    label: 'Contact',
   },
   {
     id: 'weather',

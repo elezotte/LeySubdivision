@@ -38,7 +38,7 @@ const theme = createTheme({
       hover: colors.river.light,
     },
     background: {
-      default: colors.background,
+      default: colors.gray.xxlight,
     },
     text: {
       disabled: colors.gray.dark,

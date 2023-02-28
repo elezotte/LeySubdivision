@@ -6,7 +6,7 @@ import ItemList, {
 } from 'components/common/itemList/ItemList'
 import Head from 'next/head'
 
-const neighborhoodItems: ListItem[] = [
+const neighborhoodDocuments: ListItem[] = [
   {
     id: 'ley-subdivision-covenants',
     label: 'Covenants',
@@ -14,9 +14,27 @@ const neighborhoodItems: ListItem[] = [
     iconType: ListIconTypes.DOCUMENT,
   },
   {
-    id: 'ley-subdivision-plot-map',
-    label: 'Original Subdivision Plot Map',
-    path: '/images/ley-subdivision-plot-map.jpg',
+    id: 'ley-subdivision-ditch-map',
+    label: 'Irrigation Ditch Map',
+    path: '/images/ley_subdivision_irrigation_ditches.jpg',
+    iconType: ListIconTypes.PHOTO,
+  },
+  {
+    id: 'ley-subdivision-electrical-map',
+    label: 'Electrical Service Map',
+    path: '/documents/2018_sdcea_electric_service-ley_subdivision.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+  {
+    id: 'ley-subdivision-electrical-map-with-arial',
+    label: 'Electrical Service Map with arial photo',
+    path: '/documents/2018_sdcea_electric_service-ley_subdivision-with_arial.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+  {
+    id: 'ley-subdivision-plat-map',
+    label: 'Original Subdivision Plat Map',
+    path: '/images/ley-subdivision-plat-map.jpg',
     iconType: ListIconTypes.PHOTO,
   },
 ]
@@ -46,12 +64,6 @@ const custerCountyItems: ListItem[] = [
     path: 'https://www.darkskiescolorado.org/',
     iconType: ListIconTypes.WEBSITE,
   },
-  {
-    id: 'westcliffe-earthquake-activity',
-    label: 'Earthquake Activity Website',
-    path: 'https://earthquaketrack.com/us-co-westcliffe/recent',
-    iconType: ListIconTypes.WEBSITE,
-  },
 ]
 
 const historicalItems: ListItem[] = [
@@ -68,9 +80,9 @@ const Documents = () => (
     <Head>
       <title>Ley Subdivision Information</title>
     </Head>
-    <ItemList items={neighborhoodItems} title="Neighborhood" />
+    <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
-    <ItemList items={historicalItems} title="Historical" />
+    <ItemList items={historicalItems} title="Historical Resources" />
   </Box>
 )
 

@@ -19,8 +19,9 @@ export const colors = {
     dark: '#1e6398',
   },
   gray: {
-    xlight: '#f7ead8',
-    light: '#ded3c2',
+    xxlight: '#f7f4f0',
+    xlight: '#f7f0e7',
+    light: '#e9e0d1',
     mediumLight: '#aca396',
     medium: '#777168',
     mediumDark: '#5e5952',

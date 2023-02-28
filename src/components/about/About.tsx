@@ -1,8 +1,10 @@
-import { Button, ButtonGroup } from '@mui/material'
+import { Button, ButtonGroup, Grid } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
+import { colors, font } from 'components/theme/themeSettings'
 import GoogleMapReact, { Maps } from 'google-map-react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState } from 'react'
 import { styles } from './about.styles'
 import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
@@ -39,15 +41,67 @@ export default function About() {
   const handleTypeChange = (newType: MapTypes) => {
     setType(newType)
   }
+  const imgDivisor = 4
 
   return (
     <>
       <Head>
         <title>About the Ley Subdivision</title>
       </Head>
-      <Box sx={commonStyles.pageContent}>
-        Some text about the area could go here
-      </Box>
+      <Grid container sx={commonStyles.pageContent}>
+        <Grid
+          item
+          sx={{
+            fontSize: font.size.ML,
+            backgroundColor: colors.gray.light,
+            color: colors.gray.dark,
+            paddingX: 6,
+            paddingY: 3,
+            borderTopLeftRadius: 6,
+            borderBottomLeftRadius: 6,
+          }}
+          xs={12}
+          md={6}
+        >
+          <p>
+            The Ley subdivision was created in 1971 and is one of a few
+            neighborhoods on the West side of the Wet Mountain Valley floor.
+          </p>
+          <p>
+            It covers roughly 136 acres and contains 41 lots. It is bounded to
+            the North by County Road 136 and County Road 137 to the West.
+          </p>
+          <p>
+            It lies less than five miles from the Sangre De Cristo mountains and
+            the town of Westcliffe and is only 1-2 hours from Colorado Springs,
+            Salida, Canon City, and Pueblo.
+          </p>
+        </Grid>
+        <Grid
+          item
+          sx={{
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+          display={{ xs: 'none', md: 'block' }}
+          md={6}
+        >
+          <a href="/images/photo2.jpg" target="_blank">
+            <Image
+              alt="Ley Subdivision Plat Map"
+              fill
+              priority
+              src="/images/photo2.jpg"
+              style={{
+                objectFit: 'cover',
+                border: `4px solid ${colors.gray.light}`,
+                borderTopRightRadius: 10,
+                borderBottomRightRadius: 10,
+              }}
+            />
+          </a>
+        </Grid>
+      </Grid>
       <Box sx={styles.map}>
         <GoogleMapReact
           bootstrapURLKeys={

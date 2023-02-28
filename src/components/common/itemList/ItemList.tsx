@@ -1,6 +1,4 @@
-import EmailIcon from '@mui/icons-material/AlternateEmail'
 import DocumentIcon from '@mui/icons-material/DescriptionOutlined'
-import PhotoIcon from '@mui/icons-material/PhoneOutlined'
 import PhoneIcon from '@mui/icons-material/PhotoOutlined'
 import WebsiteIcon from '@mui/icons-material/Wysiwyg'
 import Link from '@mui/material/Link'
@@ -13,15 +11,11 @@ import { reactStyles, styles } from './itemList.styles'
 
 export enum ListIconTypes {
   DOCUMENT = 'document',
-  EMAIL = 'email',
-  PHONE = 'phone',
   PHOTO = 'photo',
   WEBSITE = 'website',
 }
 const icons = {
   [ListIconTypes.DOCUMENT]: <DocumentIcon sx={styles.listIcon} />,
-  [ListIconTypes.EMAIL]: <EmailIcon sx={styles.listIcon} />,
-  [ListIconTypes.PHONE]: <PhotoIcon sx={styles.listIcon} />,
   [ListIconTypes.PHOTO]: <PhoneIcon sx={styles.listIcon} />,
   [ListIconTypes.WEBSITE]: <WebsiteIcon sx={styles.listIcon} />,
 }
