@@ -1,3 +1,3 @@
-import Contacts from 'components/contacts/Contacts'
+import Contact from 'components/contact/Contact'
 
-export default Contacts
+export default Contact
