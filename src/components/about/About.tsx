@@ -63,7 +63,7 @@ export default function About() {
           <p>
             It lies less than five miles from the Sangre De Cristo mountains and
             the town of Westcliffe and is only 1-2 hours from Colorado Springs,
-            Salida, Canon City, and Pueblo.
+            Salida, Cañon City, and Monarch Mountain Ski Area.
           </p>
         </Grid>
         <Grid item sx={styles.imageContainer} md={6}>
