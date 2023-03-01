@@ -77,6 +77,7 @@ const Contacts = () => {
         </Box>
         {sent && <Box sx={styles.sent}>You&apos;re message has been sent!</Box>}
         <TextField
+          disabled={sending}
           fullWidth
           label="Name"
           onChange={(e) => setName(e.target.value)}
@@ -86,6 +87,7 @@ const Contacts = () => {
           value={name}
         />
         <TextField
+          disabled={sending}
           fullWidth
           label="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -96,6 +98,7 @@ const Contacts = () => {
           value={email}
         />
         <TextField
+          disabled={sending}
           fullWidth
           label="Phone"
           onChange={(e) => setPhone(e.target.value)}
@@ -105,6 +108,7 @@ const Contacts = () => {
           value={phone}
         />
         <TextField
+          disabled={sending}
           fullWidth
           label="Message"
           multiline
