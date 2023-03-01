@@ -57,7 +57,7 @@ export default function About() {
           <p>
             The subdivision was created in 1971 and is one of a few
             neighborhoods on the West side of the valley floor. It covers
-            roughly 136 acres, contains 41 lots and is bounded to the North by
+            roughly 150 acres, contains 41 lots and is bounded to the North by
             County Road 136 and County Road 137 to the West.
           </p>
           <p>

@@ -69,6 +69,14 @@ export const styles: MuiSxStyles = {
     paddingY: 3,
     borderTopLeftRadius: 6,
     borderBottomLeftRadius: 6,
+    borderTopRightRadius: {
+      xs: 6,
+      md: 0,
+    },
+    borderBottomRightRadius: {
+      xs: 6,
+      md: 0,
+    },
 
     '@media (max-width:500px)': {
       fontSize: font.size.MD,
