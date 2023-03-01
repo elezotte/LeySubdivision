@@ -33,7 +33,7 @@ interface ItemListProps {
 const ItemList: React.FC<ItemListProps> = ({ title, items }: ItemListProps) => {
   return (
     <>
-      <Typography variant="h3">{title}</Typography>
+      <Typography variant="h2">{title}</Typography>
       <List dense={true} disablePadding sx={styles.list}>
         {items.map((item) => (
           <ListItem key={item.id} disablePadding disableGutters>

@@ -76,19 +76,13 @@ const theme = createTheme({
           fontFamily: font.family.logo,
           fontSize: font.size.LG,
           fontWeight: font.weight.BOLD,
-          marginBottom: '24px',
+          marginBottom: '30px',
         },
         h2: {
-          color: colors.gray.medium,
-          fontSize: font.size.ML,
-          fontWeight: font.weight.REGULAR,
-          marginBottom: '16px',
-        },
-        h3: {
           color: colors.river.medium,
           fontSize: font.size.ML,
-          fontWeight: font.weight.REGULAR,
-          marginBottom: '8px',
+          fontWeight: font.weight.SEMIBOLD,
+          marginBottom: '12px',
         },
         body1: {
           color: colors.gray.dark,

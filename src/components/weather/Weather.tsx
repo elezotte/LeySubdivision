@@ -3,6 +3,7 @@ import { Box } from '@mui/system'
 import { commonStyles } from 'components/common.styles'
 import Head from 'next/head'
 import ReactWeather, { useOpenWeather } from 'react-open-weather'
+import { styles } from './weather.styles'
 
 const Weather: React.FC = () => {
   const { data, isLoading, errorMessage } = useOpenWeather({
@@ -20,14 +21,16 @@ const Weather: React.FC = () => {
       </Head>
       <Typography variant="h1">Area Weather</Typography>
       {isLoading && <LinearProgress />}
-      <ReactWeather
-        isLoading={isLoading}
-        errorMessage={errorMessage}
-        data={data}
-        lang="en"
-        showForecast
-        unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
-      />
+      <Box sx={styles.container}>
+        <ReactWeather
+          isLoading={isLoading}
+          errorMessage={errorMessage}
+          data={data}
+          lang="en"
+          showForecast
+          unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
+        />
+      </Box>
     </Box>
   )
 }
