@@ -75,12 +75,22 @@ const historicalItems: ListItem[] = [
   },
 ]
 
+const meetingItems: ListItem[] = [
+  {
+    id: 'meeting-minutes-20232302',
+    label: 'Meeting Minutes - 2/25/2023',
+    path: 'https://docs.google.com/document/d/1QpNPNWSGF7iL0-R0QETHcZ4uRbAiH7Vi8l-8gZD2CWk/edit?usp=sharing',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+]
+
 const Documents = () => (
   <Box sx={commonStyles.pageContent}>
     <Head>
       <title>Ley Subdivision Information</title>
     </Head>
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
+    <ItemList items={meetingItems} title="Neighborhood Meetings" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
     <ItemList items={historicalItems} title="Historical Resources" />
   </Box>
