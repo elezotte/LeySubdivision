@@ -2,6 +2,6 @@ import { MuiSxStyles } from 'components/theme/themeSettings'
 
 export const styles: MuiSxStyles = {
   container: {
-    maxWidth: 900,
+    maxWidth: 680,
   },
 }

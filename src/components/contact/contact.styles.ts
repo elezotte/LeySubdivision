@@ -5,7 +5,7 @@ export const styles: MuiSxStyles = {
     marginTop: 4,
   },
   container: {
-    maxWidth: 640,
+    maxWidth: 680,
   },
   text: {
     fontSize: {

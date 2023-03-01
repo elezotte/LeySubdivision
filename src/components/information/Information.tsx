@@ -9,6 +9,12 @@ import Head from 'next/head'
 
 const neighborhoodDocuments: ListItem[] = [
   {
+    id: 'ley-subdivision-welcome-pack',
+    label: 'New Resident Welcome Pack',
+    path: '/documents/ccpoa_welcome_pack.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+  {
     id: 'ley-subdivision-covenants',
     label: 'Covenants',
     path: '/documents/ley-subdivision-covenants.pdf',

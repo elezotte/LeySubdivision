@@ -82,7 +82,7 @@ const Contacts = () => {
           disabled={sending}
           fullWidth
           label="Name"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value.substring(0, 100))}
           required
           size="small"
           sx={styles.input}
@@ -92,7 +92,7 @@ const Contacts = () => {
           disabled={sending}
           fullWidth
           label="Email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.substring(0, 100))}
           required
           size="small"
           sx={styles.input}
@@ -103,7 +103,7 @@ const Contacts = () => {
           disabled={sending}
           fullWidth
           label="Phone"
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value.substring(0, 100))}
           size="small"
           sx={styles.input}
           type="tel"
@@ -114,7 +114,7 @@ const Contacts = () => {
           fullWidth
           label="Message"
           multiline
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) => setMessage(e.target.value.substring(0, 1000))}
           required
           rows={10}
           size="small"
