@@ -94,7 +94,7 @@ const Documents = () => (
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={meetingItems} title="Neighborhood Meetings" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
-    <ItemList items={historicalItems} title="Historical Resources" />
+    <ItemList items={historicalItems} title="Historical" />
   </Box>
 )
 

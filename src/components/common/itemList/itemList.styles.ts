@@ -14,6 +14,10 @@ export const styles: MuiSxStyles = {
     fontSize: font.size.LG,
   },
   list: {
+    fontSize: {
+      xs: font.size.MD,
+      md: font.size.ML,
+    },
     marginLeft: 1,
     marginBottom: 4,
   },
@@ -25,6 +29,5 @@ export const styles: MuiSxStyles = {
 export const reactStyles: ReactStyles = {
   link: {
     textDecoration: 'none',
-    fontSize: font.size.ML,
   },
 }

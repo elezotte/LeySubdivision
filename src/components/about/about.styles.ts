@@ -44,6 +44,12 @@ export const styles: MuiSxStyles = {
     left: 10,
     ...googleButtonStyles,
   },
+  h1: {
+    marginBottom: {
+      xs: 1,
+      md: 'inherit',
+    },
+  },
   imageContainer: {
     position: 'relative',
     overflow: 'hidden',
@@ -60,6 +66,16 @@ export const styles: MuiSxStyles = {
   marker: {
     transform: 'translate(-50%, -100%)',
     color: colors.warning.medium,
+  },
+  p: {
+    marginBottom: {
+      xs: 0,
+      md: 2,
+    },
+    marginTop: {
+      xs: 1,
+      md: 2,
+    },
   },
   text: {
     fontSize: font.size.ML,

@@ -79,7 +79,7 @@ const theme = createTheme({
           marginBottom: '30px',
         },
         h2: {
-          color: colors.river.medium,
+          color: colors.gray.mediumDark,
           fontSize: font.size.ML,
           fontWeight: font.weight.SEMIBOLD,
           marginBottom: '12px',

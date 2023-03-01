@@ -8,8 +8,14 @@ export const styles: MuiSxStyles = {
     maxWidth: 640,
   },
   text: {
-    fontSize: font.size.ML,
-    marginBottom: 4,
+    fontSize: {
+      xs: font.size.MD,
+      md: font.size.ML,
+    },
+    marginBottom: {
+      xs: 2,
+      md: 4,
+    },
   },
   input: {
     marginBottom: 2,
