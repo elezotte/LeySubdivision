@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Grid } from '@mui/material'
+import { Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
 import GoogleMapReact, { Maps } from 'google-map-react'
@@ -49,6 +49,7 @@ export default function About() {
       </Head>
       <Grid container sx={commonStyles.pageContent}>
         <Grid item sx={styles.text} xs={12} md={6}>
+          <Typography variant="h1">About the Subdivision</Typography>
           <p>
             The Ley subdivision is located near the town of Westcliffe Colorado,
             between the Sangre De Cristo and Wet Mountain ranges, within the Wet

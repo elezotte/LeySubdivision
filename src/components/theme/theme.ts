@@ -72,36 +72,37 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          fontSize: font.size.XL,
-          fontWeight: font.weight.SEMIBOLD,
-          color: colors.river.medium,
+          color: colors.gray.mediumLight,
+          fontFamily: font.family.logo,
+          fontSize: font.size.LG,
+          fontWeight: font.weight.BOLD,
           marginBottom: '24px',
         },
         h2: {
-          fontSize: font.size.ML,
-          fontWeight: font.weight.SEMIBOLD,
           color: colors.gray.medium,
+          fontSize: font.size.ML,
+          fontWeight: font.weight.REGULAR,
           marginBottom: '16px',
         },
         h3: {
-          fontSize: font.size.LG,
+          color: colors.river.medium,
+          fontSize: font.size.ML,
           fontWeight: font.weight.REGULAR,
-          color: colors.gray.medium,
           marginBottom: '8px',
         },
         body1: {
-          fontSize: font.size.MD,
-          fontWeight: font.weight.REGULAR,
           color: colors.gray.dark,
+          fontWeight: font.weight.REGULAR,
+          fontSize: font.size.MD,
         },
         button: {
-          fontSize: font.size.SM,
           fontWeight: font.weight.SEMIBOLD,
+          fontSize: font.size.SM,
         },
         caption: {
+          color: colors.gray.dark,
           fontSize: font.size.SM,
           fontWeight: font.weight.LIGHT,
-          color: colors.gray.dark,
         },
         subtitle1: {
           fontSize: font.size.MD,

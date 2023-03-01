@@ -63,6 +63,7 @@ export const styles: MuiSxStyles = {
   },
   text: {
     fontSize: font.size.ML,
+    fontFamily: font.family.logo,
     backgroundColor: colors.gray.light,
     color: colors.gray.dark,
     paddingX: 6,

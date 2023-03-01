@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
 import ItemList, {
@@ -89,6 +90,7 @@ const Documents = () => (
     <Head>
       <title>Ley Subdivision Information</title>
     </Head>
+    <Typography variant="h1">Neighborhood & Area Information</Typography>
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={meetingItems} title="Neighborhood Meetings" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />

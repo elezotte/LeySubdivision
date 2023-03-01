@@ -1,4 +1,4 @@
-import { LinearProgress } from '@mui/material'
+import { LinearProgress, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { commonStyles } from 'components/common.styles'
 import Head from 'next/head'
@@ -18,6 +18,7 @@ const Weather: React.FC = () => {
       <Head>
         <title>Ley Subdivision Weather</title>
       </Head>
+      <Typography variant="h1">Area Weather</Typography>
       {isLoading && <LinearProgress />}
       <ReactWeather
         isLoading={isLoading}
