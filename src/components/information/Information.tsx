@@ -11,13 +11,13 @@ const neighborhoodDocuments: ListItem[] = [
   {
     id: 'ley-subdivision-welcome-pack',
     label: 'New Resident Welcome Pack',
-    path: '/documents/ccpoa_welcome_pack.pdf',
+    path: '/documents/ley-subdivision/ccpoa_welcome_pack.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
     id: 'ley-subdivision-covenants',
     label: 'Covenants',
-    path: '/documents/ley-subdivision-covenants.pdf',
+    path: '/documents/ley-subdivision/ley-subdivision-covenants.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
@@ -29,13 +29,13 @@ const neighborhoodDocuments: ListItem[] = [
   {
     id: 'ley-subdivision-electrical-map',
     label: 'Electrical Service Map',
-    path: '/documents/2018_sdcea_electric_service-ley_subdivision.pdf',
+    path: '/documents/ley-subdivision/2018_sdcea_electric_service-ley_subdivision.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
     id: 'ley-subdivision-electrical-map-with-arial',
     label: 'Electrical Service Map with arial photo',
-    path: '/documents/2018_sdcea_electric_service-ley_subdivision-with_arial.pdf',
+    path: '/documents/ley-subdivision/2018_sdcea_electric_service-ley_subdivision-with_arial.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
@@ -44,13 +44,20 @@ const neighborhoodDocuments: ListItem[] = [
     path: '/images/ley-subdivision-plat-map.jpg',
     iconType: ListIconTypes.PHOTO,
   },
+  {
+    id: 'ley-subdivision-lot-list',
+    label: 'Ley Subdivision Lot List',
+    path: '/documents/ley-subdivision/ley-subdivision-lot-listing.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+    noFollow: true,
+  },
 ]
 
 const custerCountyItems: ListItem[] = [
   {
     id: 'custer-county-zoning-districts',
     label: 'Custer County Subdivisions and Zoning Districts',
-    path: '/documents/custer-county-zoning-districts.pdf',
+    path: '/documents/custer-county/custer-county-zoning-districts.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
@@ -86,7 +93,7 @@ const meetingItems: ListItem[] = [
   {
     id: 'meeting-minutes-20232302',
     label: 'Meeting Minutes - 2/25/2023',
-    path: 'https://docs.google.com/document/d/1QpNPNWSGF7iL0-R0QETHcZ4uRbAiH7Vi8l-8gZD2CWk/edit?usp=sharing',
+    path: '/documents/meeting-minutes/2_25_2023-ley_subdivision-meeting_minutes.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
 ]

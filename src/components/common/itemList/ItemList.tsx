@@ -24,6 +24,7 @@ export interface ListItem {
   id: string
   label: string
   path: string
+  noFollow?: boolean
 }
 interface ItemListProps {
   items: ListItem[]
