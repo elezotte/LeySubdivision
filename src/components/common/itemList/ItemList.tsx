@@ -24,7 +24,7 @@ export interface ListItem {
   id: string
   label: string
   path: string
-  noFollow?: boolean
+  rel?: string
 }
 interface ItemListProps {
   items: ListItem[]
@@ -48,6 +48,7 @@ const ItemList: React.FC<ItemListProps> = ({ title, items }: ItemListProps) => {
                   href={item.path}
                   style={reactStyles.link}
                   target={item.id}
+                  rel={item.rel || 'bookmark'}
                 >
                   {item.label}
                 </Link>

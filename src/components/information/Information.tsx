@@ -49,7 +49,7 @@ const neighborhoodDocuments: ListItem[] = [
     label: 'Ley Subdivision Lot List',
     path: 'https://qpublic.schneidercorp.com/Application.aspx?AppID=1018&LayerID=21357&PageTypeID=3&PageID=9120&Q=62443313',
     iconType: ListIconTypes.DOCUMENT,
-    noFollow: true,
+    rel: 'nofollow',
   },
 ]
 
@@ -65,18 +65,21 @@ const custerCountyItems: ListItem[] = [
     label: 'Westcliffe Website',
     path: 'https://townofwestcliffe.colorado.gov',
     iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
   },
   {
     id: 'wet-mountain-valley',
     label: 'Wet Mountain Valley Website',
     path: 'https://visitwetmountainvalley.com',
     iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
   },
   {
     id: 'dark-skies',
     label: 'Dark Skies Website',
     path: 'https://www.darkskiescolorado.org/',
     iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
   },
 ]
 
@@ -86,6 +89,7 @@ const historicalItems: ListItem[] = [
     label: 'Conquistador Ski Area',
     path: 'http://www.coloradoskihistory.com/lost/conquistador.html',
     iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
   },
 ]
 
