@@ -47,7 +47,7 @@ const neighborhoodDocuments: ListItem[] = [
   {
     id: 'ley-subdivision-lot-list',
     label: 'Ley Subdivision Lot List',
-    path: '/documents/ley-subdivision/ley-subdivision-lot-listing.pdf',
+    path: 'https://qpublic.schneidercorp.com/Application.aspx?AppID=1018&LayerID=21357&PageTypeID=3&PageID=9120&Q=62443313',
     iconType: ListIconTypes.DOCUMENT,
     noFollow: true,
   },
