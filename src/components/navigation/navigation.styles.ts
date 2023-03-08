@@ -3,7 +3,7 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 const commonButtonItemStyles: SxProps = {
   fontFamily: font.family.logo,
-  fontWeight: 400,
+  fontWeight: font.weight.BOLD,
   borderRadius: 0,
   fontSize: font.size.ML,
   paddingY: 0,
@@ -12,11 +12,10 @@ const commonButtonItemStyles: SxProps = {
   marginTop: 0,
   marginBottom: '-2px',
   textDecoration: 'none',
-  borderBottomStyle: 'solid',
-  borderBottomWidth: 2,
   textTransform: 'none',
   lineHeight: 1,
   minHeight: 52,
+  color: colors.gray.light,
 }
 
 const commonMenuItemStyles: SxProps = {
@@ -29,10 +28,10 @@ const commonMenuItemStyles: SxProps = {
 export const styles: MuiSxStyles = {
   appBar: {
     paddingX: 3,
-    backgroundColor: colors.background,
+    backgroundColor: colors.gray.medium,
     boxShadow: 'none',
     display: 'flex',
-    borderBottom: `2px solid ${colors.gray.light}`,
+    borderBottom: `2px solid ${colors.gray.mediumDark}`,
   },
   buttonContainer: {
     flexGrow: 1,
@@ -67,7 +66,7 @@ export const styles: MuiSxStyles = {
     marginRight: 1,
   },
   logoIcon: {
-    marginTop: '2px',
+    marginTop: '4px',
   },
   menu: {
     display: {
@@ -89,16 +88,35 @@ export const styles: MuiSxStyles = {
     padding: 4,
   },
   selected: {
-    borderBottomColor: colors.gray.medium,
     ...commonButtonItemStyles,
     color: colors.gray.dark,
+
+    '&:before, &:after': {
+      content: "''",
+      position: 'absolute',
+      borderStyle: 'solid',
+      borderTopColor: 'transparent',
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
+      bottom: 2,
+      borderBottomColor: colors.gray.dark,
+    },
+
+    '&:before': {
+      borderWidth: 8,
+      marginLeft: 1,
+    },
+    '&:after': {
+      borderWidth: 6,
+      marginLeft: -1,
+    },
   },
   notSelected: {
     ...commonButtonItemStyles,
     borderBottomColor: 'transparent',
 
     '&:hover': {
-      color: colors.river.light,
+      color: colors.background,
     },
   },
   selectedMenu: {
