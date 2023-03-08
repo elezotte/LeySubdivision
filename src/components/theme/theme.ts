@@ -72,14 +72,14 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: colors.gray.mediumLight,
+          color: colors.gray.medium,
           fontFamily: font.family.logo,
           fontSize: font.size.LG,
           fontWeight: font.weight.BOLD,
           marginBottom: '30px',
         },
         h2: {
-          color: colors.gray.mediumDark,
+          color: colors.gray.mediumLight,
           fontSize: font.size.ML,
           fontWeight: font.weight.SEMIBOLD,
           marginBottom: '12px',

@@ -82,7 +82,7 @@ export const styles: MuiSxStyles = {
     fontFamily: font.family.logo,
     backgroundColor: colors.gray.light,
     color: colors.gray.dark,
-    paddingX: 6,
+    paddingX: 4,
     paddingY: 3,
     borderTopLeftRadius: 6,
     borderBottomLeftRadius: 6,
