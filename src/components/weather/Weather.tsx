@@ -1,3 +1,4 @@
+import WeatherIcon from '@mui/icons-material/WbSunnyOutlined'
 import { LinearProgress, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { commonStyles } from 'components/common.styles'
@@ -19,7 +20,10 @@ const Weather: React.FC = () => {
       <Head>
         <title>Ley Subdivision Weather</title>
       </Head>
-      <Typography variant="h1">Area Weather</Typography>
+      <Typography variant="h1">
+        <WeatherIcon sx={commonStyles.pageIcon} />
+        Area Weather
+      </Typography>
       {isLoading && <LinearProgress />}
       <Box sx={styles.container}>
         <ReactWeather

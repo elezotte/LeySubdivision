@@ -5,4 +5,10 @@ export const commonStyles: MuiSxStyles = {
     flex: 1,
     padding: 4,
   },
+  pageIcon: {
+    display: {
+      xs: 'none',
+      md: 'inline-flex',
+    },
+  },
 }

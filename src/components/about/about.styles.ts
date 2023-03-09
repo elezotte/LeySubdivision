@@ -45,10 +45,15 @@ export const styles: MuiSxStyles = {
     ...googleButtonStyles,
   },
   h1: {
+    display: 'flex',
+    alignItems: 'center',
     marginBottom: {
       xs: 1,
       md: 'inherit',
     },
+  },
+  h1Icon: {
+    fontSize: '36px !important',
   },
   imageContainer: {
     position: 'relative',

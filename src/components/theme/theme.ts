@@ -77,6 +77,13 @@ const theme = createTheme({
           fontSize: font.size.LG,
           fontWeight: font.weight.BOLD,
           marginBottom: '30px',
+          display: 'flex',
+          alignItems: 'center',
+
+          '> svg': {
+            fontSize: 30,
+            marginRight: 6,
+          },
         },
         h2: {
           color: colors.gray.mediumLight,

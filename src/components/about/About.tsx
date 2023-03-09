@@ -1,3 +1,4 @@
+import AboutIcon from '@mui/icons-material/LandscapeOutlined'
 import { Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
@@ -50,6 +51,9 @@ export default function About() {
       <Grid container sx={commonStyles.pageContent}>
         <Grid item sx={styles.text} xs={12} md={6}>
           <Typography sx={styles.h1} variant="h1">
+            <AboutIcon
+              sx={{ ...styles.h1Icon, ...commonStyles.pageIcon } as any}
+            />
             About the Subdivision
           </Typography>
           <Box sx={styles.p}>

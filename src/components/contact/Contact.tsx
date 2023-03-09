@@ -1,3 +1,4 @@
+import ContactIcon from '@mui/icons-material/MailOutline'
 import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -69,7 +70,10 @@ const Contacts = () => {
         <title>Contact Us</title>
       </Head>
       <Box sx={styles.container}>
-        <Typography variant="h1">Send Us a Message</Typography>
+        <Typography variant="h1">
+          <ContactIcon sx={commonStyles.pageIcon} />
+          Send Us a Message
+        </Typography>
         <Box sx={styles.text}>
           Do you have questions or comments about the Ley Subdivision or this
           website? Feel free to contact us using the form below.
