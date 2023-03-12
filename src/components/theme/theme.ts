@@ -79,6 +79,10 @@ const theme = createTheme({
           marginBottom: '30px',
           display: 'flex',
           alignItems: 'center',
+          borderBottomStyle: 'solid',
+          borderBottomWidth: 2,
+          borderBottomColor: colors.gray.light,
+          paddingBottom: 12,
 
           '> svg': {
             fontSize: 30,

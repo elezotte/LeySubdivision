@@ -27,14 +27,14 @@ export interface MapChangeProps {
 export enum MapTypes {
   ROADMAP = 'roadmap',
   SATELLITE = 'satellite',
-  HYBRID = 'hybrid',
+  // HYBRID = 'hybrid',
   TERRAIN = 'terrain',
 }
 
 export const MapTypeText = {
   [MapTypes.ROADMAP]: 'Road',
   [MapTypes.SATELLITE]: 'Satellite',
-  [MapTypes.HYBRID]: 'Hybrid',
+  // [MapTypes.HYBRID]: 'Hybrid',
   [MapTypes.TERRAIN]: 'Terrain',
 }
 

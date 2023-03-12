@@ -31,7 +31,7 @@ export const styles: MuiSxStyles = {
     backgroundColor: colors.gray.medium,
     boxShadow: 'none',
     display: 'flex',
-    borderBottom: `2px solid ${colors.gray.mediumDark}`,
+    borderBottom: `2px solid ${colors.gray.dark}`,
   },
   buttonContainer: {
     flexGrow: 1,

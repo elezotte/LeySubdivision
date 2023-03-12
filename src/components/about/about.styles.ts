@@ -7,15 +7,15 @@ import {
 } from 'components/theme/themeSettings'
 
 const googleButtonStyles: SxProps = {
-  backgroundColor: colors.background,
+  backgroundColor: colors.gray.xxlight,
   color: colors.gray.mediumDark,
-  fontWeight: 500,
+  fontWeight: 400,
   fontSize: font.size.MD,
   textTransform: 'none',
   border: `1px solid ${colors.gray.light}`,
   paddingX: 0,
-  paddingY: 0.5,
-  width: 87,
+  paddingY: 0.3,
+  width: 90,
 
   '&:hover': {
     color: colors.gray.dark,
@@ -31,17 +31,16 @@ const googleButtonStyles: SxProps = {
 export const reactStyles: ReactStyles = {
   image: {
     objectFit: 'cover',
-    border: `4px solid ${colors.gray.light}`,
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
+    border: `1px solid ${colors.gray.mediumLight}`,
+    borderRadius: 4,
   },
 }
 
 export const styles: MuiSxStyles = {
   directionsButton: {
     position: 'absolute',
-    bottom: 10,
     left: 10,
+    bottom: 10,
     ...googleButtonStyles,
   },
   h1: {
@@ -65,7 +64,7 @@ export const styles: MuiSxStyles = {
   },
   map: {
     height: 300,
-    borderTop: `1px solid ${colors.gray.xlight}`,
+    borderTop: `3px solid ${colors.gray.light}`,
     position: 'relative',
   },
   marker: {
@@ -85,20 +84,8 @@ export const styles: MuiSxStyles = {
   text: {
     fontSize: font.size.ML,
     fontFamily: font.family.logo,
-    backgroundColor: colors.gray.light,
     color: colors.gray.dark,
-    paddingX: 4,
-    paddingY: 3,
-    borderTopLeftRadius: 6,
-    borderBottomLeftRadius: 6,
-    borderTopRightRadius: {
-      xs: 6,
-      md: 0,
-    },
-    borderBottomRightRadius: {
-      xs: 6,
-      md: 0,
-    },
+    paddingRight: 4,
 
     '@media (max-width:500px)': {
       fontSize: font.size.MD,
