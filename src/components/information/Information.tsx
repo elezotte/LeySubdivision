@@ -82,6 +82,13 @@ const custerCountyItems: ListItem[] = [
     iconType: ListIconTypes.WEBSITE,
     rel: 'external',
   },
+  {
+    id: 'hiking-nearby',
+    label: 'Hiking Nearby',
+    path: 'https://www.alltrails.com/us/colorado/westcliffe',
+    iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
+  },
 ]
 
 const historicalItems: ListItem[] = [
@@ -89,6 +96,13 @@ const historicalItems: ListItem[] = [
     id: 'conquistadore-ski-area',
     label: 'Conquistador Ski Area',
     path: 'http://www.coloradoskihistory.com/lost/conquistador.html',
+    iconType: ListIconTypes.WEBSITE,
+    rel: 'external',
+  },
+  {
+    id: 'historical-photos',
+    label: 'Historical Photos of Westcliffe',
+    path: 'https://digital.denverlibrary.org/digital/collection/p15330coll22/search/searchterm/westcliffe%2C%20colorado',
     iconType: ListIconTypes.WEBSITE,
     rel: 'external',
   },

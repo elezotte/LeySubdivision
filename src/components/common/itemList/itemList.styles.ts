@@ -16,7 +16,7 @@ export const styles: MuiSxStyles = {
   list: {
     fontSize: {
       xs: font.size.MD,
-      md: font.size.ML,
+      md: font.size.MD,
     },
     marginLeft: 1,
     marginBottom: 4,
