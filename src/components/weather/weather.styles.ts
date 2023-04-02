@@ -1,4 +1,4 @@
-import { font, MuiSxStyles } from 'components/theme/themeSettings'
+import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 export const styles: MuiSxStyles = {
   chartContainer: {
@@ -30,5 +30,19 @@ export const styles: MuiSxStyles = {
   hourlyTitle: {
     fontSize: font.size.ML,
     fontWeight: font.weight.SEMIBOLD,
+  },
+  weatherAlert: {
+    display: 'flex',
+    fontSize: font.size.MS,
+    padding: 2,
+    marginBottom: 1,
+    color: colors.warning.dark,
+    backgroundColor: colors.warning.light,
+  },
+  weatherAlertContainer: {
+    marginBottom: 3,
+  },
+  weatherAlertIcon: {
+    marginRight: 2,
   },
 }

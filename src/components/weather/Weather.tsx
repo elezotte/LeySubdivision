@@ -1,3 +1,4 @@
+import WarningIcon from '@mui/icons-material/WarningAmber'
 import { LinearProgress, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { commonStyles } from 'components/common.styles'
@@ -19,10 +20,12 @@ import { colors } from 'components/theme/themeSettings'
 import { Line } from 'react-chartjs-2'
 import {
   chartOptions,
+  CurrentWeather,
   DayData,
   formatDate,
   formatDay,
   formatTime,
+  OWAlert,
   OWDay,
   OWHour,
 } from './weather.config'
@@ -42,6 +45,9 @@ const Weather: React.FC = () => {
   const [chartData, setChartData] = useState<any>({})
   const [chartDayData, setChartDayData] = useState<DayData[]>([])
   const [loadingData, setLoadingData] = useState(true)
+  const [todayText, setTodayText] = useState('')
+  const [currentWeather, setCurrentWeather] = useState<CurrentWeather>({})
+  const [weatherAlerts, setWeatherAlerts] = useState<OWAlert[]>([])
 
   const getWeather = async () => {
     await fetch('/api/weather', {
@@ -57,6 +63,15 @@ const Weather: React.FC = () => {
         const temps: object[] = []
         const iconIds: number[] = []
         const dayData: DayData[] = []
+        const today = new Intl.DateTimeFormat('en-US', {
+          weekday: 'long',
+        }).format()
+
+        setTodayText(`Today, ${today}`)
+        setCurrentWeather({
+          temp: `${Math.round(res.current.temp)}°F`,
+        })
+        setWeatherAlerts(res.alerts)
 
         res.hourly.forEach((hour: OWHour) => {
           hourLabels.push(formatTime(hour.dt))
@@ -125,7 +140,24 @@ const Weather: React.FC = () => {
       <Box>
         {!loadingData && (
           <>
-            <Box sx={styles.hourlyTitle}>Today</Box>
+            {weatherAlerts.length && (
+              <Box sx={styles.weatherAlertContainer}>
+                {weatherAlerts.map((alert) => (
+                  <Box key={alert.description} sx={styles.weatherAlert}>
+                    <WarningIcon sx={styles.weatherAlertIcon} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: alert.description.replaceAll('\n*', '<br />*'),
+                      }}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            )}
+            <Box sx={styles.hourlyTitle}>{todayText}</Box>
+            <Box sx={styles.currentWeather}>
+              <Box sx={styles.currentTemp}>{currentWeather.temp}</Box>
+            </Box>
             <Box sx={styles.chartContainer}>
               <Line options={chartOptions} data={chartData} />
             </Box>

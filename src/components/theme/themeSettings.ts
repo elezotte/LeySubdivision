@@ -28,8 +28,9 @@ export const colors = {
     dark: '#2b2926',
   },
   warning: {
+    light: '#ffcfcf',
     medium: '#e32323',
-    dark: '#cb1f1f',
+    dark: '#b41c1b',
   },
 }
 

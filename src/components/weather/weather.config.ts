@@ -1,5 +1,8 @@
 import { font } from 'components/theme/themeSettings'
 
+export interface CurrentWeather {
+  temp?: string
+}
 export interface DayData {
   day: string
   temps: {
@@ -27,6 +30,9 @@ export interface OWHour {
   dt: number
   temp: number
   feels_like: number
+}
+export interface OWAlert {
+  description: string
 }
 
 export const formatDate = (unixTimestamp: number): string => {
