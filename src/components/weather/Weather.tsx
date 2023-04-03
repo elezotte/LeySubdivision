@@ -1,6 +1,4 @@
-import WarningIcon from '@mui/icons-material/WarningAmber'
-import { LinearProgress, Typography } from '@mui/material'
-import { Box } from '@mui/system'
+import { Alert, Box, LinearProgress, Typography } from '@mui/material'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
 import Head from 'next/head'
@@ -138,20 +136,23 @@ const Weather: React.FC = () => {
       </Head>
       <Typography variant="h1">Area Weather</Typography>
       {loadingData && <LinearProgress />}
-      <Box>
+      <Box sx={styles.weatherContainer}>
         {!loadingData && (
           <>
             {weatherAlerts.length && (
               <Box sx={styles.weatherAlertContainer}>
                 {weatherAlerts.map((alert) => (
-                  <Box key={alert.description} sx={styles.weatherAlert}>
-                    <WarningIcon sx={styles.weatherAlertIcon} />
+                  <Alert
+                    severity="warning"
+                    key={alert.description}
+                    sx={styles.weatherAlert}
+                  >
                     <div
                       dangerouslySetInnerHTML={{
                         __html: alert.description.replaceAll('\n*', '<br />*'),
                       }}
                     />
-                  </Box>
+                  </Alert>
                 ))}
               </Box>
             )}
@@ -176,13 +177,13 @@ const Weather: React.FC = () => {
             </Box>
             <Box sx={styles.daysContainer}>
               {chartDayData.map((day, index: number) => (
-                <Box key={index}>
+                <Box key={index} sx={styles.dayContainer}>
                   <Box sx={styles.dayText}>{day.day}</Box>
                   <Box>
                     <WeatherIcon wid={day.iconId} />
                   </Box>
                   <Box sx={styles.dayTemps}>
-                    <Box sx={styles.dayLowTemp}>{day.temps.low}-</Box>
+                    <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
                     {day.temps.high}
                   </Box>
                 </Box>

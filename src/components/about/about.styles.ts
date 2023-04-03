@@ -89,8 +89,6 @@ export const styles: MuiSxStyles = {
 
     '@media (max-width:500px)': {
       fontSize: font.size.MD,
-      paddingX: 3,
-      paddingY: 2,
     },
   },
   typeButtonGroup: {

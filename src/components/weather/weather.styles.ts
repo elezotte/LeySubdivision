@@ -10,19 +10,40 @@ export const styles: MuiSxStyles = {
     maxWidth: 680,
   },
   currentTemp: {
-    display: 'inline-block',
-    fontSize: font.size.ML,
+    fontSize: font.size.LG,
     fontWeight: font.weight.BOLD,
   },
   currentWeatherItem: {
-    display: 'inline-block',
-    fontSize: font.size.MS,
-    fontWeight: font.weight.LIGHT,
-    marginLeft: 2,
+    fontSize: font.size.MD,
+    fontWeight: font.weight.REGULAR,
+    marginLeft: {
+      xs: 0,
+      md: 2,
+    },
   },
   currentWeather: {
-    display: 'flex',
+    display: {
+      xs: 'block',
+      md: 'flex',
+    },
     alignItems: 'center',
+  },
+  dayContainer: {
+    borderColor: colors.gray.light,
+    borderWidth: {
+      xs: 0,
+      md: 1,
+    },
+    borderStyle: 'solid',
+    paddingX: {
+      xs: 0,
+      md: 2,
+    },
+    paddingY: {
+      xs: 0,
+      md: 1,
+    },
+    borderRadius: 2,
   },
   daysContainer: {
     fontSize: font.size.ML,
@@ -31,11 +52,17 @@ export const styles: MuiSxStyles = {
     justifyContent: 'space-between',
     textAlign: 'center',
   },
+  dayIcon: {
+    fontSize: 30,
+  },
   dayTemps: {
     fontSize: font.size.MS,
   },
   dayText: {
-    fontSize: font.size.ML,
+    fontSize: {
+      xs: font.size.MD,
+      md: font.size.ML,
+    },
   },
   dayLowTemp: {
     display: {
@@ -48,17 +75,12 @@ export const styles: MuiSxStyles = {
     fontWeight: font.weight.SEMIBOLD,
   },
   weatherAlert: {
-    display: 'flex',
     fontSize: font.size.MS,
-    padding: 2,
-    marginBottom: 1,
-    color: colors.warning.dark,
-    backgroundColor: colors.warning.light,
   },
   weatherAlertContainer: {
     marginBottom: 3,
   },
-  weatherAlertIcon: {
-    marginRight: 2,
+  weatherContainer: {
+    maxWidth: 740,
   },
 }
