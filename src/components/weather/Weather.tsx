@@ -1,6 +1,7 @@
 import WarningIcon from '@mui/icons-material/WarningAmber'
 import { LinearProgress, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
@@ -16,7 +17,6 @@ import {
   Title,
   Tooltip,
 } from 'chart.js'
-import { colors } from 'components/theme/themeSettings'
 import { Line } from 'react-chartjs-2'
 import {
   chartOptions,
@@ -33,12 +33,13 @@ import WeatherIcon from './WeatherIcon'
 
 ChartJS.register(
   CategoryScale,
+  ChartDataLabels,
+  Legend,
   LinearScale,
-  PointElement,
   LineElement,
+  PointElement,
   Title,
-  Tooltip,
-  Legend
+  Tooltip
 )
 
 const Weather: React.FC = () => {
@@ -55,11 +56,11 @@ const Weather: React.FC = () => {
     })
       .then((response) => response.json())
       .then((res) => {
+        console.log(res)
         const dayLabels: string[] = []
         const hourLabels: string[] = []
         const days: string[] = []
         const hourlyTemps: number[] = []
-        const hourlyFeelTemps: number[] = []
         const temps: object[] = []
         const iconIds: number[] = []
         const dayData: DayData[] = []
@@ -67,16 +68,23 @@ const Weather: React.FC = () => {
           weekday: 'long',
         }).format()
 
+        const maxPrecip = Math.max(
+          ...res.minutely.map((minute: any) => minute.precipitation)
+        )
+
         setTodayText(`Today, ${today}`)
         setCurrentWeather({
           temp: `${Math.round(res.current.temp)}°F`,
+          feels_like: `${Math.round(res.current.feels_like)}°`,
+          humidity: `${Math.round(res.current.humidity)}%`,
+          wind_speed: `${Math.round(res.current.wind_speed)}mph`,
+          precipitation: `${Math.round(maxPrecip)}%`,
         })
         setWeatherAlerts(res.alerts)
 
         res.hourly.forEach((hour: OWHour) => {
           hourLabels.push(formatTime(hour.dt))
           hourlyTemps.push(Math.round(hour.temp))
-          hourlyFeelTemps.push(Math.round(hour.feels_like))
         })
 
         res.daily.forEach((day: OWDay) => {
@@ -110,13 +118,6 @@ const Weather: React.FC = () => {
               data: hourlyTemps,
               borderColor: '#fbbd05',
               backgroundColor: '#fbbd05',
-              cubicInterpolationMode: 'monotone',
-            },
-            {
-              label: 'Feel',
-              data: hourlyFeelTemps,
-              borderColor: colors.gray.mediumLight,
-              backgroundColor: colors.gray.mediumLight,
               cubicInterpolationMode: 'monotone',
             },
           ],
@@ -157,6 +158,18 @@ const Weather: React.FC = () => {
             <Box sx={styles.hourlyTitle}>{todayText}</Box>
             <Box sx={styles.currentWeather}>
               <Box sx={styles.currentTemp}>{currentWeather.temp}</Box>
+              <Box sx={styles.currentWeatherItem}>
+                feels like: {currentWeather.feels_like}
+              </Box>
+              <Box sx={styles.currentWeatherItem}>
+                wind: {currentWeather.wind_speed}
+              </Box>
+              <Box sx={styles.currentWeatherItem}>
+                humidity: {currentWeather.humidity}
+              </Box>
+              <Box sx={styles.currentWeatherItem}>
+                precipitation: {currentWeather.precipitation}
+              </Box>
             </Box>
             <Box sx={styles.chartContainer}>
               <Line options={chartOptions} data={chartData} />

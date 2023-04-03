@@ -2,6 +2,10 @@ import { font } from 'components/theme/themeSettings'
 
 export interface CurrentWeather {
   temp?: string
+  feels_like?: string
+  humidity?: string
+  wind_speed?: string
+  precipitation?: string
 }
 export interface DayData {
   day: string
@@ -29,7 +33,6 @@ export interface OWDay {
 export interface OWHour {
   dt: number
   temp: number
-  feels_like: number
 }
 export interface OWAlert {
   description: string
@@ -40,14 +43,12 @@ export const formatDate = (unixTimestamp: number): string => {
 
   return `${dateObj.getMonth() + 1}/${dateObj.getDate()}`
 }
-
 export const formatDay = (unixTimestamp: number): string => {
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const dateObj = new Date(unixTimestamp * 1000)
 
   return days[dateObj.getDay()]
 }
-
 export const formatTime = (unixTimestamp: number): string => {
   const dateObj = new Date(unixTimestamp * 1000).toLocaleTimeString('en-US', {
     hour: 'numeric',
@@ -73,7 +74,7 @@ export const chartOptions: any = {
       },
     },
     y: {
-      display: true,
+      display: false,
       grid: {
         display: false,
       },
@@ -88,22 +89,19 @@ export const chartOptions: any = {
     },
   },
   plugins: {
+    datalabels: {
+      align: 'end',
+      anchor: 'end',
+      display: (context: any) => context.dataIndex % 6 === 0,
+      formatter: (value: any) => `${value}°`,
+    },
     tooltip: {
       callbacks: {
         label: (item: { formattedValue: string }) => ` ${item.formattedValue}°`,
       },
     },
     legend: {
-      align: 'end',
-      display: true,
-      labels: {
-        boxWidth: 13,
-        font: {
-          size: font.size.MS,
-          family: font.family.body,
-          weight: 'bold',
-        },
-      },
+      display: false,
     },
   },
   elements: {

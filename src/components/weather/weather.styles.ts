@@ -3,10 +3,26 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 export const styles: MuiSxStyles = {
   chartContainer: {
     height: 200,
+    marginTop: 2,
     marginBottom: 2,
   },
   container: {
     maxWidth: 680,
+  },
+  currentTemp: {
+    display: 'inline-block',
+    fontSize: font.size.ML,
+    fontWeight: font.weight.BOLD,
+  },
+  currentWeatherItem: {
+    display: 'inline-block',
+    fontSize: font.size.MS,
+    fontWeight: font.weight.LIGHT,
+    marginLeft: 2,
+  },
+  currentWeather: {
+    display: 'flex',
+    alignItems: 'center',
   },
   daysContainer: {
     fontSize: font.size.ML,
