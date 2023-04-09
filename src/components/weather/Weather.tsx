@@ -139,7 +139,7 @@ const Weather: React.FC = () => {
       <Box sx={styles.weatherContainer}>
         {!loadingData && (
           <>
-            {weatherAlerts.length && (
+            {weatherAlerts?.length && (
               <Box sx={styles.weatherAlertContainer}>
                 {weatherAlerts.map((alert) => (
                   <Alert

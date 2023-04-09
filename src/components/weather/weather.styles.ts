@@ -81,6 +81,6 @@ export const styles: MuiSxStyles = {
     marginBottom: 3,
   },
   weatherContainer: {
-    maxWidth: 740,
+    maxWidth: 840,
   },
 }
