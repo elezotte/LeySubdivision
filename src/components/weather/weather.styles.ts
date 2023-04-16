@@ -76,6 +76,10 @@ export const styles: MuiSxStyles = {
   },
   weatherAlert: {
     fontSize: font.size.MS,
+    marginBottom: 1,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'rgba(228, 144, 84, 0.4)',
   },
   weatherAlertContainer: {
     marginBottom: 3,

@@ -1,6 +1,7 @@
 import { Alert, Box, LinearProgress, Typography } from '@mui/material'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
+import { colors } from 'components/theme/themeSettings'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { styles } from './weather.styles'
@@ -114,8 +115,8 @@ const Weather: React.FC = () => {
             {
               label: 'Temp',
               data: hourlyTemps,
-              borderColor: '#fbbd05',
-              backgroundColor: '#fbbd05',
+              borderColor: colors.warning.medium,
+              backgroundColor: colors.warning.medium,
               cubicInterpolationMode: 'monotone',
             },
           ],

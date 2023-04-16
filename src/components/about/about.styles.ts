@@ -69,7 +69,7 @@ export const styles: MuiSxStyles = {
   },
   marker: {
     transform: 'translate(-50%, -100%)',
-    color: colors.warning.medium,
+    color: colors.alert.medium,
   },
   p: {
     marginBottom: {
