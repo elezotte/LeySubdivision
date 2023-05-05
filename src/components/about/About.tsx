@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import { reactStyles, styles } from './about.styles'
-import { MapChangeProps, mapProps, MapTypes, MapTypeText } from './map.config'
+import { MapChangeProps, MapTypeText, MapTypes, mapProps } from './map.config'
 
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
   return selectedType === buttonType
@@ -49,28 +49,30 @@ export default function About() {
         <title>About the Ley Subdivision</title>
       </Head>
       <Grid container sx={commonStyles.pageContent}>
-        <Grid item sx={styles.text} xs={12} md={6}>
-          <Typography sx={styles.h1} variant="h1">
-            <AboutIcon
-              sx={{ ...styles.h1Icon, ...commonStyles.pageIcon } as any}
-            />
-            About the Subdivision
-          </Typography>
-          <Box sx={styles.p}>
-            The Ley subdivision is located near the town of Westcliffe Colorado,
-            between the Sangre De Cristo and Wet Mountain ranges, within the Wet
-            Mountain Valley.
-          </Box>
-          <Box sx={styles.p}>
-            The subdivision was created in 1971 and is one of a few
-            neighborhoods on the West side of the valley floor. It covers
-            roughly 150 acres, contains 41 lots and is bounded to the North by
-            County Road 136 and County Road 137 to the West.
-          </Box>
-          <Box sx={styles.p}>
-            It lies less than five miles from the Sangre De Cristo mountains and
-            the town of Westcliffe and is only 1-2 hours from Colorado Springs,
-            Salida, Cañon City, and Monarch Mountain Ski Area.
+        <Grid item sx={styles.textContainer} xs={12} md={6}>
+          <Box sx={styles.text}>
+            <Typography sx={styles.h1} variant="h1">
+              <AboutIcon
+                sx={{ ...styles.h1Icon, ...commonStyles.pageIcon } as any}
+              />
+              About the Subdivision
+            </Typography>
+            <Box sx={styles.p}>
+              The Ley subdivision is located near the town of Westcliffe
+              Colorado, between the Sangre De Cristo and Wet Mountain ranges,
+              within the Wet Mountain Valley.
+            </Box>
+            <Box sx={styles.p}>
+              The subdivision was created in 1971 and is one of a few
+              neighborhoods on the West side of the valley floor. It covers
+              roughly 150 acres, contains 41 lots and is bounded to the North by
+              County Road 136 and County Road 137 to the West.
+            </Box>
+            <Box sx={styles.p}>
+              It lies less than five miles from the Sangre De Cristo mountains
+              and the town of Westcliffe and is only 1-2 hours from Colorado
+              Springs, Salida, Cañon City, and Monarch Mountain Ski Area.
+            </Box>
           </Box>
         </Grid>
         <Grid item sx={styles.imageContainer} md={6}>

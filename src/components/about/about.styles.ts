@@ -82,10 +82,27 @@ export const styles: MuiSxStyles = {
     },
   },
   text: {
+    borderRadius: 1,
+    backgroundColor: colors.gray.light,
+    paddingX: 2,
+    paddingY: 1,
+    flex: 1,
+
+    '> h1': {
+      borderBottomColor: colors.background,
+      borderBottomWidth: 1,
+      marginX: -2,
+      paddingX: 2,
+    },
+  },
+  textContainer: {
     fontSize: font.size.ML,
     fontFamily: font.family.logo,
     color: colors.gray.dark,
-    paddingRight: 4,
+    paddingRight: 2,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
 
     '@media (max-width:500px)': {
       fontSize: font.size.MD,
