@@ -89,6 +89,12 @@ const custerCountyItems: ListItem[] = [
     iconType: ListIconTypes.WEBSITE,
     rel: 'external',
   },
+  {
+    id: 'hiking-nearby',
+    label: 'Sangre De Cristo Peaks',
+    path: '/images/westcliffe-peaks.jpg',
+    iconType: ListIconTypes.PHOTO,
+  },
 ]
 
 const historicalItems: ListItem[] = [
