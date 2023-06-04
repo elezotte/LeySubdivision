@@ -74,6 +74,16 @@ export const styles: MuiSxStyles = {
     fontSize: font.size.ML,
     fontWeight: font.weight.SEMIBOLD,
   },
+  info: {
+    color: colors.gray.mediumLight,
+    fontSize: font.size.MS,
+    marginBottom: 1,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  infoIcon: {
+    marginRight: 0.25,
+  },
   weatherAlert: {
     fontSize: font.size.MS,
     marginBottom: 1,

@@ -1,4 +1,9 @@
-import { Alert, Box, LinearProgress, Typography } from '@mui/material'
+import InfoIcon from '@mui/icons-material/InfoOutlined'
+import Alert from '@mui/material/Alert'
+import Box from '@mui/material/Box'
+import LinearProgress from '@mui/material/LinearProgress'
+import MuiTooltip from '@mui/material/Tooltip'
+import Typography from '@mui/material/Typography'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
 import { colors } from 'components/theme/themeSettings'
@@ -48,7 +53,7 @@ const Weather: React.FC = () => {
   const [todayText, setTodayText] = useState('')
   const [currentWeather, setCurrentWeather] = useState<CurrentWeather>({})
   const [weatherAlerts, setWeatherAlerts] = useState<OWAlert[]>([])
-
+  console.log('chartDayData', chartDayData)
   const getWeather = async () => {
     await fetch('/api/weather', {
       method: 'GET',
@@ -104,6 +109,7 @@ const Weather: React.FC = () => {
               high: `${Math.round(day.temp.max)}°`,
             },
             iconId: day.weather[0].id,
+            summary: day.summary,
           })
         })
 
@@ -173,21 +179,27 @@ const Weather: React.FC = () => {
                 precipitation: {currentWeather.precipitation}
               </Box>
             </Box>
+            <Box sx={styles.info}>
+              <InfoIcon fontSize="inherit" sx={styles.infoIcon} />
+              Hover time and day for more information
+            </Box>
             <Box sx={styles.chartContainer}>
               <Line options={chartOptions} data={chartData} />
             </Box>
             <Box sx={styles.daysContainer}>
               {chartDayData.map((day, index: number) => (
-                <Box key={index} sx={styles.dayContainer}>
-                  <Box sx={styles.dayText}>{day.day}</Box>
-                  <Box>
-                    <WeatherIcon wid={day.iconId} />
+                <MuiTooltip key={index} title={day.summary}>
+                  <Box sx={styles.dayContainer}>
+                    <Box sx={styles.dayText}>{day.day}</Box>
+                    <Box>
+                      <WeatherIcon wid={day.iconId} />
+                    </Box>
+                    <Box sx={styles.dayTemps}>
+                      <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
+                      {day.temps.high}
+                    </Box>
                   </Box>
-                  <Box sx={styles.dayTemps}>
-                    <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
-                    {day.temps.high}
-                  </Box>
-                </Box>
+                </MuiTooltip>
               ))}
             </Box>
           </>

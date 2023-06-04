@@ -9,12 +9,13 @@ export interface CurrentWeather {
 }
 export interface DayData {
   day: string
+  iconId: number
+  summary: string
   temps: {
     temp: string
     low: string
     high: string
   }
-  iconId: number
 }
 export interface OWWeather {
   id: number
@@ -23,6 +24,7 @@ export interface OWWeather {
 }
 export interface OWDay {
   dt: number
+  summary: string
   temp: {
     day: number
     min: number
