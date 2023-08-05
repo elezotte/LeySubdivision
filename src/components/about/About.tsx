@@ -21,10 +21,37 @@ const renderMarkers = (map: any, maps: any) =>
     map,
   })
 
+const photos = [
+  {
+    alt: 'Rainbow in the Ley Subdivision',
+    src: '/images/photo1.jpg',
+  },
+  {
+    alt: 'Moody clouds over the Ley Subdivision',
+    src: '/images/photo2.jpg',
+  },
+  {
+    alt: 'Arial of the Wet Mountain Valley',
+    src: '/images/photo3.jpg',
+  },
+  {
+    alt: 'Mountain view from the Ley Subdivision',
+    src: '/images/photo4.jpg',
+  },
+  {
+    alt: 'Mountain view coming into Westcliffe',
+    src: '/images/photo5.jpg',
+  },
+]
+
+const getPhotoIndex = (min: number, max: number): number =>
+  Math.round(Math.random() * (max - min) + min)
+
 export default function About() {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
+  const [photoIndex] = useState(getPhotoIndex(4, 0))
 
   const handleMapReset = () => {
     setCenter({
@@ -76,12 +103,12 @@ export default function About() {
           </Box>
         </Grid>
         <Grid item sx={styles.imageContainer} md={6}>
-          <a href="/images/photo2.jpg" target="_blank">
+          <a href={photos[photoIndex].src} target="_blank">
             <Image
-              alt="Ley Subdivision Plat Map"
+              alt={photos[photoIndex].alt}
               fill
               priority
-              src="/images/photo2.jpg"
+              src={photos[photoIndex].src}
               style={reactStyles.image}
             />
           </a>
