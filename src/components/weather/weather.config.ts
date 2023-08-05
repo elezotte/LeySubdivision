@@ -1,11 +1,12 @@
 import { font } from 'components/theme/themeSettings'
 
 export interface CurrentWeather {
-  temp?: string
+  description?: string
   feels_like?: string
   humidity?: string
-  wind_speed?: string
   precipitation?: string
+  temp?: string
+  wind_speed?: string
 }
 export interface DayData {
   day: string

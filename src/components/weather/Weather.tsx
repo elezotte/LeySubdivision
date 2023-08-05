@@ -49,40 +49,40 @@ ChartJS.register(
 const Weather: React.FC = () => {
   const [chartData, setChartData] = useState<any>({})
   const [chartDayData, setChartDayData] = useState<DayData[]>([])
+  const [currentWeather, setCurrentWeather] = useState<CurrentWeather>({})
   const [loadingData, setLoadingData] = useState(true)
   const [todayText, setTodayText] = useState('')
-  const [currentWeather, setCurrentWeather] = useState<CurrentWeather>({})
   const [weatherAlerts, setWeatherAlerts] = useState<OWAlert[]>([])
-  console.log('chartDayData', chartDayData)
+
   const getWeather = async () => {
     await fetch('/api/weather', {
       method: 'GET',
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res)
-        const dayLabels: string[] = []
-        const hourLabels: string[] = []
-        const days: string[] = []
-        const hourlyTemps: number[] = []
-        const temps: object[] = []
-        const iconIds: number[] = []
         const dayData: DayData[] = []
+        const dayLabels: string[] = []
+        const days: string[] = []
+        const hourLabels: string[] = []
+        const hourlyTemps: number[] = []
+        const iconIds: number[] = []
+        const temps: object[] = []
+
         const today = new Intl.DateTimeFormat('en-US', {
           weekday: 'long',
         }).format()
-
         const maxPrecip = Math.max(
           ...res.minutely.map((minute: any) => minute.precipitation)
         )
 
         setTodayText(`Today, ${today}`)
         setCurrentWeather({
-          temp: `${Math.round(res.current.temp)}°F`,
+          description: res.current.weather[0].description,
           feels_like: `${Math.round(res.current.feels_like)}°`,
           humidity: `${Math.round(res.current.humidity)}%`,
-          wind_speed: `${Math.round(res.current.wind_speed)}mph`,
           precipitation: `${Math.round(maxPrecip)}%`,
+          temp: `${Math.round(res.current.temp)}°F`,
+          wind_speed: `${Math.round(res.current.wind_speed)}mph`,
         })
         setWeatherAlerts(res.alerts)
 
@@ -96,20 +96,20 @@ const Weather: React.FC = () => {
           days.push(formatDay(day.dt))
           iconIds.push(day.weather[0].id)
           temps.push({
-            temp: `${Math.round(day.temp.day)}°`,
-            low: `${Math.round(day.temp.min)}°`,
             high: `${Math.round(day.temp.max)}°`,
+            low: `${Math.round(day.temp.min)}°`,
+            temp: `${Math.round(day.temp.day)}°`,
           })
 
           dayData.push({
             day: formatDay(day.dt),
-            temps: {
-              temp: `${Math.round(day.temp.day)}°`,
-              low: `${Math.round(day.temp.min)}°`,
-              high: `${Math.round(day.temp.max)}°`,
-            },
             iconId: day.weather[0].id,
             summary: day.summary,
+            temps: {
+              high: `${Math.round(day.temp.max)}°`,
+              low: `${Math.round(day.temp.min)}°`,
+              temp: `${Math.round(day.temp.day)}°`,
+            },
           })
         })
 
@@ -119,11 +119,11 @@ const Weather: React.FC = () => {
           labels: hourLabels,
           datasets: [
             {
-              label: 'Temp',
-              data: hourlyTemps,
-              borderColor: colors.warning.medium,
               backgroundColor: colors.warning.medium,
+              borderColor: colors.warning.medium,
               cubicInterpolationMode: 'monotone',
+              data: hourlyTemps,
+              label: 'Temp',
             },
           ],
         })
@@ -166,6 +166,9 @@ const Weather: React.FC = () => {
             <Box sx={styles.hourlyTitle}>{todayText}</Box>
             <Box sx={styles.currentWeather}>
               <Box sx={styles.currentTemp}>{currentWeather.temp}</Box>
+              <Box sx={styles.currentWeatherItem}>
+                {currentWeather.description}
+              </Box>
               <Box sx={styles.currentWeatherItem}>
                 feels like: {currentWeather.feels_like}
               </Box>
