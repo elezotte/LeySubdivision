@@ -2,132 +2,15 @@ import InfoIcon from '@mui/icons-material/InfoOutlined'
 import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { commonStyles } from 'components/common.styles'
-import ItemList, {
-  ListIconTypes,
-  ListItem,
-} from 'components/common/itemList/ItemList'
+import ItemList from 'components/common/itemList/ItemList'
 import Head from 'next/head'
-
-const neighborhoodDocuments: ListItem[] = [
-  {
-    id: 'ley-subdivision-welcome-pack',
-    label: 'New Resident Welcome Pack',
-    path: '/documents/ley-subdivision/ccpoa_welcome_pack.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-  {
-    id: 'ley-subdivision-covenants',
-    label: 'Covenants',
-    path: '/documents/ley-subdivision/ley-subdivision-covenants.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-  {
-    id: 'ley-subdivision-ditch-map',
-    label: 'Irrigation Ditch Map',
-    path: '/images/ley_subdivision_irrigation_ditches.jpg',
-    iconType: ListIconTypes.PHOTO,
-  },
-  {
-    id: 'ley-subdivision-electrical-map',
-    label: 'Electrical Service Map',
-    path: '/documents/ley-subdivision/2018_sdcea_electric_service-ley_subdivision.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-  {
-    id: 'ley-subdivision-electrical-map-with-arial',
-    label: 'Electrical Service Map with arial photo',
-    path: '/documents/ley-subdivision/2018_sdcea_electric_service-ley_subdivision-with_arial.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-  {
-    id: 'ley-subdivision-plat-map',
-    label: 'Original Subdivision Plat Map',
-    path: '/images/ley-subdivision-plat-map.jpg',
-    iconType: ListIconTypes.PHOTO,
-  },
-  {
-    id: 'ley-subdivision-lot-list',
-    label: 'Ley Subdivision Lot List',
-    path: '/documents/ley-subdivision/ley-subdivision-lot-listing.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-    rel: 'nofollow',
-  },
-  {
-    id: 'ley-google-earth',
-    label: 'Ley Subdivision in Google Earth',
-    path: 'https://earth.google.com/web/search/Westcliffe,+CO/@38.09582429,-105.52027917,2484.58290156a,2379.74851818d,35y,-115.28274072h,81.50038872t,0.00000001r/data=CigiJgokCWek4Lc4DDlAEWek4Lc4DDnAGWeJv_FwmkVAIXan-afzLFDA',
-    iconType: ListIconTypes.WEBSITE,
-  },
-]
-
-const custerCountyItems: ListItem[] = [
-  {
-    id: 'custer-county-zoning-districts',
-    label: 'Custer County Subdivisions and Zoning Districts',
-    path: '/documents/custer-county/custer-county-zoning-districts.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-  {
-    id: 'westcliffe-town',
-    label: 'Westcliffe Website',
-    path: 'https://townofwestcliffe.colorado.gov',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-  {
-    id: 'wet-mountain-valley',
-    label: 'Wet Mountain Valley Website',
-    path: 'https://visitwetmountainvalley.com',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-  {
-    id: 'dark-skies',
-    label: 'Dark Skies Website',
-    path: 'https://www.darkskiescolorado.org/',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-  {
-    id: 'hiking-nearby',
-    label: 'Hiking Nearby',
-    path: 'https://www.alltrails.com/us/colorado/westcliffe',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-  {
-    id: 'hiking-nearby',
-    label: 'Sangre De Cristo Peaks',
-    path: '/images/westcliffe-peaks.jpg',
-    iconType: ListIconTypes.PHOTO,
-  },
-]
-
-const historicalItems: ListItem[] = [
-  {
-    id: 'conquistadore-ski-area',
-    label: 'Conquistador Ski Area',
-    path: 'http://www.coloradoskihistory.com/lost/conquistador.html',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-  {
-    id: 'historical-photos',
-    label: 'Historical Photos of Westcliffe',
-    path: 'https://digital.denverlibrary.org/digital/collection/p15330coll22/search/searchterm/westcliffe%2C%20colorado',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external',
-  },
-]
-
-const meetingItems: ListItem[] = [
-  {
-    id: 'meeting-minutes-20232302',
-    label: 'Meeting Minutes - 2/25/2023',
-    path: '/documents/meeting-minutes/2_25_2023-ley_subdivision-meeting_minutes.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-  },
-]
+import {
+  custerCountyItems,
+  historicalItems,
+  meetingItems,
+  neighborhoodDocuments,
+  treasurerItems,
+} from './informationItems'
 
 const Documents = () => (
   <Box sx={commonStyles.pageContent}>
@@ -140,6 +23,7 @@ const Documents = () => (
     </Typography>
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={meetingItems} title="Neighborhood Meetings" />
+    <ItemList items={treasurerItems} title="Treasurer Reports" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
     <ItemList items={historicalItems} title="Historical" />
   </Box>
