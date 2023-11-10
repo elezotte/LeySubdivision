@@ -42,6 +42,10 @@ const photos = [
     alt: 'Mountain view coming into Westcliffe',
     src: '/images/photo5.jpg',
   },
+  {
+    alt: 'Looking toward the Sangre De Cristo mountains',
+    src: '/images/photo6.jpg',
+  },
 ]
 
 const getPhotoIndex = (min: number, max: number): number =>
@@ -51,7 +55,7 @@ export default function About() {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
-  const [photoIndex] = useState(getPhotoIndex(4, 0))
+  const [photoIndex] = useState(getPhotoIndex(6, 0))
 
   const handleMapReset = () => {
     setCenter({
