@@ -1,4 +1,5 @@
 import InfoIcon from '@mui/icons-material/InfoOutlined'
+import PageIcon from '@mui/icons-material/WbSunnyOutlined'
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
@@ -141,7 +142,10 @@ const Weather: React.FC = () => {
       <Head>
         <title>Ley Subdivision Weather</title>
       </Head>
-      <Typography variant="h1">Area Weather</Typography>
+      <Typography variant="h1">
+        <PageIcon fontSize="inherit" sx={styles.infoIcon} />
+        Area Weather
+      </Typography>
       {loadingData && <LinearProgress />}
       <Box sx={styles.weatherContainer}>
         {!loadingData && (

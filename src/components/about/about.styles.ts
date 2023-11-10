@@ -83,17 +83,11 @@ export const styles: MuiSxStyles = {
   },
   text: {
     borderRadius: 1,
-    backgroundColor: colors.gray.light,
-    paddingX: 2,
-    paddingY: 1,
+    paddingRight: 2,
+    paddingBottom: 1,
     flex: 1,
 
-    '> h1': {
-      borderBottomColor: colors.background,
-      borderBottomWidth: 1,
-      marginX: -2,
-      paddingX: 2,
-    },
+    '> h1': { paddingBottom: 0 },
   },
   textContainer: {
     fontSize: font.size.ML,

@@ -72,16 +72,14 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: colors.gray.medium,
+          color: colors.gray.mediumDark,
           fontFamily: font.family.logo,
           fontSize: font.size.LG,
           fontWeight: font.weight.BOLD,
-          marginBottom: '30px',
+          marginBottom: 30,
+          marginLeft: -2,
           display: 'flex',
           alignItems: 'center',
-          borderBottomStyle: 'solid',
-          borderBottomWidth: 2,
-          borderBottomColor: colors.gray.light,
           paddingBottom: 12,
 
           '> svg': {

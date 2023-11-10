@@ -55,7 +55,7 @@ export default function About() {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
-  const [photoIndex] = useState(getPhotoIndex(6, 0))
+  const [photoIndex] = useState(getPhotoIndex(5, 0))
 
   const handleMapReset = () => {
     setCenter({
