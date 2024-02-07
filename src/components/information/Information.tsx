@@ -9,7 +9,6 @@ import {
   historicalItems,
   meetingItems,
   neighborhoodDocuments,
-  treasurerItems,
 } from './informationItems'
 
 const Documents = () => (
@@ -23,7 +22,7 @@ const Documents = () => (
     </Typography>
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={meetingItems} title="Neighborhood Meetings" />
-    <ItemList items={treasurerItems} title="Treasurer Reports" />
+    {/* <ItemList items={treasurerItems} title="Treasurer Reports" /> */}
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
     <ItemList items={historicalItems} title="Historical" />
   </Box>
