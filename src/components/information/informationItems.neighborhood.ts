@@ -38,13 +38,6 @@ export const neighborhoodDocuments: ListItem[] = [
     iconType: ListIconTypes.PHOTO,
   },
   {
-    id: 'ley-subdivision-lot-list',
-    label: 'Ley Subdivision Lot List',
-    path: '/documents/ley-subdivision/ley-subdivision-lot-listing.pdf',
-    iconType: ListIconTypes.DOCUMENT,
-    rel: 'nofollow',
-  },
-  {
     id: 'ley-google-earth',
     label: 'Ley Subdivision in Google Earth',
     path: 'https://earth.google.com/web/search/Westcliffe,+CO/@38.09582429,-105.52027917,2484.58290156a,2379.74851818d,35y,-115.28274072h,81.50038872t,0.00000001r/data=CigiJgokCWek4Lc4DDlAEWek4Lc4DDnAGWeJv_FwmkVAIXan-afzLFDA',
