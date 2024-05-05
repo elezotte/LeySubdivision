@@ -79,9 +79,9 @@ export default function About() {
       <Head>
         <title>About the Ley Subdivision</title>
       </Head>
-      <Grid container sx={commonStyles.pageContent}>
-        <Grid item sx={styles.textContainer} xs={12} md={6}>
-          <Box sx={styles.text}>
+      <Grid container sx={commonStyles.pageContentFull}>
+        <Grid item sx={styles.imageContainer} md={12} xs={12}>
+          <Grid sx={styles.text} md={6} xs={12}>
             <Typography sx={styles.h1} variant="h1">
               <AboutIcon
                 sx={{ ...styles.h1Icon, ...commonStyles.pageIcon } as any}
@@ -104,9 +104,7 @@ export default function About() {
               and the town of Westcliffe and is only 1-2 hours from Colorado
               Springs, Salida, Cañon City, and Monarch Mountain Ski Area.
             </Box>
-          </Box>
-        </Grid>
-        <Grid item sx={styles.imageContainer} md={6}>
+          </Grid>
           <a href={photos[photoIndex].src} target="_blank">
             <Image
               alt={photos[photoIndex].alt}

@@ -31,8 +31,7 @@ const googleButtonStyles: SxProps = {
 export const reactStyles: ReactStyles = {
   image: {
     objectFit: 'cover',
-    border: `1px solid ${colors.gray.mediumLight}`,
-    borderRadius: 4,
+    objectPosition: '50% 60%',
   },
 }
 
@@ -57,14 +56,10 @@ export const styles: MuiSxStyles = {
   imageContainer: {
     position: 'relative',
     overflow: 'hidden',
-    display: {
-      xs: 'none',
-      md: 'block',
-    },
   },
   map: {
     height: 300,
-    borderTop: `3px solid ${colors.gray.light}`,
+    borderTop: `2px solid ${colors.gray.dark}`,
     position: 'relative',
   },
   marker: {
@@ -81,13 +76,26 @@ export const styles: MuiSxStyles = {
       md: 2,
     },
   },
+  resetButton: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    ...googleButtonStyles,
+  },
   text: {
-    borderRadius: 1,
     paddingRight: 2,
     paddingBottom: 1,
-    flex: 1,
+    zIndex: 1,
+    padding: 4,
+    color: colors.gray.xlight,
+    height: '100%',
+    backgroundColor: `${colors.gray.dark}88`,
+    position: 'relative',
 
-    '> h1': { paddingBottom: 0 },
+    '> h1': {
+      paddingBottom: 0,
+      color: colors.gray.xlight,
+    },
   },
   textContainer: {
     fontSize: font.size.ML,
@@ -117,11 +125,5 @@ export const styles: MuiSxStyles = {
       backgroundColor: colors.gray.xlight,
       color: colors.gray.medium,
     },
-  },
-  resetButton: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-    ...googleButtonStyles,
   },
 }

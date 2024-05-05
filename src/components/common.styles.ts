@@ -5,6 +5,9 @@ export const commonStyles: MuiSxStyles = {
     flex: 1,
     padding: 4,
   },
+  pageContentFull: {
+    flex: 1,
+  },
   pageIcon: {
     display: {
       xs: 'none',
