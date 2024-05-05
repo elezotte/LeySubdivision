@@ -8,6 +8,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { reactStyles, styles } from './about.styles'
 import { MapChangeProps, MapTypeText, MapTypes, mapProps } from './map.config'
+import blur1 from './blur/photo1.blur'
+import blur2 from './blur/photo2.blur'
+import blur3 from './blur/photo3.blur'
+import blur4 from './blur/photo4.blur'
+import blur5 from './blur/photo5.blur'
+import blur6 from './blur/photo6.blur'
 
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
   return selectedType === buttonType
@@ -25,26 +31,32 @@ const photos = [
   {
     alt: 'Rainbow in the Ley Subdivision',
     src: '/images/photo1.jpg',
+    blur: blur1
   },
   {
     alt: 'Moody clouds over the Ley Subdivision',
     src: '/images/photo2.jpg',
+    blur: blur2
   },
   {
     alt: 'Arial of the Wet Mountain Valley',
     src: '/images/photo3.jpg',
+    blur: blur3
   },
   {
     alt: 'Mountain view from the Ley Subdivision',
     src: '/images/photo4.jpg',
+    blur: blur4
   },
   {
     alt: 'Mountain view coming into Westcliffe',
     src: '/images/photo5.jpg',
+    blur: blur5
   },
   {
     alt: 'Looking toward the Sangre De Cristo mountains from Westcliffe',
     src: '/images/photo6.jpg',
+    blur: blur6
   },
 ]
 
@@ -107,7 +119,9 @@ const About = (): React.ReactNode => {
           <a href={photos[photoIndex].src} target="_blank">
             <Image
               alt={photos[photoIndex].alt}
+              blurDataURL={photos[photoIndex].blur}
               fill
+              placeholder="blur"
               priority
               src={photos[photoIndex].src}
               style={reactStyles.image}
