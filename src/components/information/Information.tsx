@@ -11,7 +11,7 @@ import {
   neighborhoodDocuments,
 } from './informationItems'
 
-const Documents = () => (
+const Documents = (): React.ReactNode => (
   <Box sx={commonStyles.pageContent}>
     <Head>
       <title>Ley Subdivision Information</title>

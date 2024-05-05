@@ -7,9 +7,7 @@ const getWeather = async (req: NextApiRequest, res: NextApiResponse) => {
     method: 'GET',
   })
     .then((response) => response.json())
-    .then((data) => {
-      return res.json(data)
-    })
+    .then((data) => res.json(data))
 }
 
 export default getWeather

@@ -51,7 +51,7 @@ const photos = [
 const getPhotoIndex = (min: number, max: number): number =>
   Math.round(Math.random() * (max - min) + min)
 
-export default function About() {
+const About = (): React.ReactNode => {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
@@ -72,7 +72,6 @@ export default function About() {
   const handleTypeChange = (newType: MapTypes) => {
     setType(newType)
   }
-  const imgDivisor = 4
 
   return (
     <>
@@ -173,3 +172,5 @@ export default function About() {
     </>
   )
 }
+
+export default About

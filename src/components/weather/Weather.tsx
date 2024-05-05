@@ -9,7 +9,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
 import { colors } from 'components/theme/themeSettings'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { styles } from './weather.styles'
 
 import {
@@ -55,7 +55,7 @@ const Weather: React.FC = () => {
   const [todayText, setTodayText] = useState('')
   const [weatherAlerts, setWeatherAlerts] = useState<OWAlert[]>([])
 
-  const getWeather = async () => {
+  const getWeather = useCallback(async () => {
     await fetch('/api/weather', {
       method: 'GET',
     })
@@ -131,11 +131,11 @@ const Weather: React.FC = () => {
 
         setLoadingData(false)
       })
-  }
+  }, []);
 
   useEffect(() => {
     getWeather()
-  }, [])
+  }, [getWeather])
 
   return (
     <Box sx={commonStyles.pageContent}>

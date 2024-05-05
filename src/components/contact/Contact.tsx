@@ -10,7 +10,7 @@ import Head from 'next/head'
 import { MouseEvent, useState } from 'react'
 import { styles } from './contact.styles'
 
-const Contacts = () => {
+const Contacts = (): React.ReactNode => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
