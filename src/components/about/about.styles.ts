@@ -54,6 +54,7 @@ export const styles: MuiSxStyles = {
     fontSize: '36px !important',
   },
   imageContainer: {
+    fontSize: font.size.ML,
     position: 'relative',
     overflow: 'hidden',
   },
@@ -86,10 +87,12 @@ export const styles: MuiSxStyles = {
     paddingRight: 2,
     paddingBottom: 1,
     zIndex: 1,
-    padding: 4,
+    padding: 4.5,
     color: colors.gray.xlight,
     height: '100%',
     backgroundColor: `${colors.gray.dark}88`,
+    textShadow: `1px 1px 0 ${colors.gray.dark}`,
+    borderRight: `1px dotted ${colors.gray.dark}`,
     position: 'relative',
 
     '> h1': {
