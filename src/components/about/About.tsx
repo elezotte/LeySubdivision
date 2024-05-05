@@ -43,7 +43,7 @@ const photos = [
     src: '/images/photo5.jpg',
   },
   {
-    alt: 'Looking toward the Sangre De Cristo mountains',
+    alt: 'Looking toward the Sangre De Cristo mountains from Westcliffe',
     src: '/images/photo6.jpg',
   },
 ]

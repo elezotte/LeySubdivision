@@ -4,7 +4,7 @@ export const neighborhoodDocuments: ListItem[] = [
   {
     id: 'ley-subdivision-welcome-pack',
     label: 'New Resident Welcome Pack',
-    path: '/documents/ley-subdivision/ccpoa_welcome_pack.pdf',
+    path: '/documents/ley-subdivision/ley-subdivision-welcome-packet.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
   {
