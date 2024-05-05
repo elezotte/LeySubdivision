@@ -39,8 +39,12 @@ const navItems = [
   },
 ]
 
-const Logo: React.FC = () => (
-  <Box sx={styles.logo}>
+interface LogoProps {
+  onClick: () => void
+}
+
+const Logo: React.FC<LogoProps> = ({onClick}: LogoProps) => (
+  <Box sx={styles.logo} onClick={onClick}>
     <Box sx={styles.logoIcon}>
       <Image
         alt="ley logo"
@@ -76,7 +80,7 @@ const Navigation: React.FC<NavigationProps> = ({
       <AppBar position="static" sx={styles.appBar}>
         <Toolbar disableGutters>
           <Box sx={styles.logoContainerButtons}>
-            <Logo />
+            <Logo onClick={handleClick(navItems[0].path)} />
           </Box>
           <Box sx={styles.menuContainer}>
             <IconButton
@@ -118,7 +122,7 @@ const Navigation: React.FC<NavigationProps> = ({
             </Menu>
           </Box>
           <Box sx={styles.logoContainerMenu}>
-            <Logo />
+            <Logo onClick={handleClick(navItems[0].path)} />
           </Box>
           <Box sx={styles.buttonContainer}>
             {navItems.map((navItem) => (

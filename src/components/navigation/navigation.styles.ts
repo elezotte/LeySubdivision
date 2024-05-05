@@ -51,6 +51,7 @@ export const styles: MuiSxStyles = {
     display: 'flex',
   },
   logoContainerButtons: {
+    cursor: 'pointer',
     display: {
       xs: 'none',
       md: 'flex',
