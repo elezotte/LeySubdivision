@@ -85,14 +85,31 @@ export const styles: MuiSxStyles = {
     marginRight: 0.25,
   },
   weatherAlert: {
-    fontSize: font.size.MS,
-    marginBottom: 1,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'rgba(228, 144, 84, 0.4)',
+    boxShadow: 'none',
+    backgroundColor: colors.warning.xlight,
   },
-  weatherAlertContainer: {
-    marginBottom: 3,
+  weatherAlertSummary: {
+    color: colors.warning.dark,
+    fontSize: font.size.MD,
+    fontWeight: font.weight.SEMIBOLD,
+    border: 'none',
+  },
+  weatherAlertIcon: {
+    fill: colors.warning.dark,
+    fontSize: font.size.LG,
+    marginRight: 1
+  },
+  weatherAlertExpandIcon: {
+    color: colors.warning.dark,
+  },
+  weatherAlertDetails: {
+    color: colors.warning.dark,
+    fontSize: font.size.MD,
+    paddingLeft: 6,
+    paddingTop: 0,
+  },
+  weatherAlertsContainer: {
+    marginBottom: 4,
   },
   weatherContainer: {
     maxWidth: 840,

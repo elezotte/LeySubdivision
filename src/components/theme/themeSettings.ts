@@ -28,7 +28,11 @@ export const colors = {
     dark: '#2b2926',
   },
   warning: {
+    xlight: '#FFF4D1',
+    light: '#FFE299',
     medium: '#fbbd05',
+    mediumDark: '#DBA82A',
+    dark: '#AB7A02',
   },
   alert: {
     light: '#ffcfcf',

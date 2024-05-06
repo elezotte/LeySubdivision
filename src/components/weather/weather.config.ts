@@ -38,6 +38,7 @@ export interface OWHour {
   temp: number
 }
 export interface OWAlert {
+  event: string
   description: string
 }
 

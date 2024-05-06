@@ -1,12 +1,16 @@
 import InfoIcon from '@mui/icons-material/InfoOutlined'
 import PageIcon from '@mui/icons-material/WbSunnyOutlined'
-import Alert from '@mui/material/Alert'
+import AlertIcon from '@mui/icons-material/WarningAmber'
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
 import MuiTooltip from '@mui/material/Tooltip'
+import Accordion from '@mui/material/Accordion'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
 import Typography from '@mui/material/Typography'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { commonStyles } from 'components/common.styles'
+import ExpandIcon from '@mui/icons-material/ExpandMore'
 import { colors } from 'components/theme/themeSettings'
 import Head from 'next/head'
 import { useCallback, useEffect, useState } from 'react'
@@ -151,19 +155,14 @@ const Weather: React.FC = () => {
         {!loadingData && (
           <>
             {weatherAlerts?.length && (
-              <Box sx={styles.weatherAlertContainer}>
+              <Box sx={styles.weatherAlertsContainer}>
                 {weatherAlerts.map((alert) => (
-                  <Alert
-                    severity="warning"
-                    key={alert.description}
-                    sx={styles.weatherAlert}
-                  >
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: alert.description.replaceAll('\n*', '<br />*'),
-                      }}
-                    />
-                  </Alert>
+                  <Accordion key={alert.description} sx={styles.weatherAlert}>
+                    <AccordionSummary sx={styles.weatherAlertSummary} expandIcon={<ExpandIcon sx={styles.weatherAlertExpandIcon} />}>
+                      <AlertIcon sx={styles.weatherAlertIcon} /> {alert.event}
+                    </AccordionSummary>
+                    <AccordionDetails sx={styles.weatherAlertDetails} dangerouslySetInnerHTML={{ __html: alert.description.replaceAll('\n*', '<br />*') }}></AccordionDetails>
+                  </Accordion>
                 ))}
               </Box>
             )}
