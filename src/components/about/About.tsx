@@ -67,7 +67,7 @@ const About = (): React.ReactNode => {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
-  const [photoIndex] = useState(getPhotoIndex(5, 0))
+  const [photoIndex] = useState(getPhotoIndex(0, 5))
 
   const handleMapReset = () => {
     setCenter({
