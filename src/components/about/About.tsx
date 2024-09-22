@@ -15,7 +15,6 @@ import blur4 from './blur/photo4.blur'
 import blur5 from './blur/photo5.blur'
 import blur6 from './blur/photo6.blur'
 import blur7 from './blur/photo7.blur'
-import blur8 from './blur/photo8.blur'
 
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
   return selectedType === buttonType
@@ -56,19 +55,14 @@ const photos = [
     blur: blur5
   },
   {
-    alt: 'Looking toward the Sangre De Cristo mountains from Westcliffe',
+    alt: 'Horn Peak from the Ley Subdivision',
     src: '/images/photo6.jpg',
     blur: blur6
   },
   {
-    alt: 'Horn Peak from the Ley Subdivision',
+    alt: 'Arial of the Ley Subdivision and Sangre De Cristo mountains',
     src: '/images/photo7.jpg',
     blur: blur7
-  },
-  {
-    alt: 'Arial of the Ley Subdivision and Sangre De Cristo mountains',
-    src: '/images/photo8.jpg',
-    blur: blur8
   },
 ]
 
@@ -79,7 +73,7 @@ const About = (): React.ReactNode => {
   const [center, setCenter] = useState(mapProps.center)
   const [type, setType] = useState(MapTypes.TERRAIN)
   const [zoom, setZoom] = useState(mapProps.zoom)
-  const [photoIndex] = useState(getPhotoIndex(0, 7))
+  const [photoIndex] = useState(getPhotoIndex(0, photos.length - 1))
 
   const handleMapReset = () => {
     setCenter({
