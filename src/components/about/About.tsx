@@ -158,6 +158,7 @@ const About = (): React.ReactNode => {
               ],
             },
             mapTypeId: type,
+            yesIWantToUseGoogleMapApiInternals: true,
           })}
           zoom={zoom}
         />
