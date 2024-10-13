@@ -2,7 +2,7 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 export const styles: MuiSxStyles = {
   chartContainer: {
-    height: 200,
+    height: 240,
     marginTop: 2,
     marginBottom: 2,
   },
