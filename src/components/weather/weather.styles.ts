@@ -2,9 +2,11 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 
 export const styles: MuiSxStyles = {
   chartContainer: {
-    height: 240,
-    marginTop: 2,
-    marginBottom: 2,
+    height: 260,
+    marginTop: 0.5,
+    backgroundColor: colors.background,
+    borderRadius: 0.5,
+    padding: 2,
   },
   container: {
     maxWidth: 680,
@@ -29,12 +31,7 @@ export const styles: MuiSxStyles = {
     alignItems: 'center',
   },
   dayContainer: {
-    borderColor: colors.gray.light,
-    borderWidth: {
-      xs: 0,
-      md: 1,
-    },
-    borderStyle: 'solid',
+    backgroundColor: colors.background,
     paddingX: {
       xs: 0,
       md: 2,
@@ -43,20 +40,22 @@ export const styles: MuiSxStyles = {
       xs: 0,
       md: 1,
     },
-    borderRadius: 2,
+    borderRadius: 0.5,
+    flexGrow: 1,
   },
   daysContainer: {
     fontSize: font.size.ML,
     fontWeight: font.weight.SEMIBOLD,
     display: 'flex',
-    justifyContent: 'space-between',
     textAlign: 'center',
+    gap: 0.5,
+    marginTop: 0.5,
   },
   dayIcon: {
     fontSize: 30,
   },
   dayTemps: {
-    fontSize: font.size.MS,
+    fontSize: font.size.MD,
   },
   dayText: {
     fontSize: {
@@ -77,12 +76,17 @@ export const styles: MuiSxStyles = {
   info: {
     color: colors.gray.mediumLight,
     fontSize: font.size.MS,
-    marginBottom: 1,
+    marginBottom: 0.5,
     display: 'flex',
     alignItems: 'center',
   },
   infoIcon: {
     marginRight: 0.25,
+  },
+  topInfo: {
+    backgroundColor: colors.background,
+    padding: 2,
+    borderRadius: 0.5,
   },
   weatherAlert: {
     boxShadow: 'none',
@@ -109,7 +113,7 @@ export const styles: MuiSxStyles = {
     paddingTop: 0,
   },
   weatherAlertsContainer: {
-    marginBottom: 4,
+    marginBottom: 2,
   },
   weatherContainer: {
     maxWidth: 840,

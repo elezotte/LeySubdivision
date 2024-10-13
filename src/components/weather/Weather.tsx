@@ -166,28 +166,30 @@ const Weather: React.FC = () => {
                 ))}
               </Box>
             )}
-            <Box sx={styles.hourlyTitle}>{todayText}</Box>
-            <Box sx={styles.currentWeather}>
-              <Box sx={styles.currentTemp}>{currentWeather.temp}</Box>
-              <Box sx={styles.currentWeatherItem}>
-                {currentWeather.description}
+            <Box sx={styles.topInfo}>
+              <Box sx={styles.hourlyTitle}>{todayText}</Box>
+              <Box sx={styles.currentWeather}>
+                <Box sx={styles.currentTemp}>{currentWeather.temp}</Box>
+                <Box sx={styles.currentWeatherItem}>
+                  {currentWeather.description}
+                </Box>
+                <Box sx={styles.currentWeatherItem}>
+                  feels like: {currentWeather.feels_like}
+                </Box>
+                <Box sx={styles.currentWeatherItem}>
+                  wind: {currentWeather.wind_speed}
+                </Box>
+                <Box sx={styles.currentWeatherItem}>
+                  humidity: {currentWeather.humidity}
+                </Box>
+                <Box sx={styles.currentWeatherItem}>
+                  precipitation: {currentWeather.precipitation}
+                </Box>
               </Box>
-              <Box sx={styles.currentWeatherItem}>
-                feels like: {currentWeather.feels_like}
+              <Box sx={styles.info}>
+                <InfoIcon fontSize="inherit" sx={styles.infoIcon} />
+                Hover time and day for more information
               </Box>
-              <Box sx={styles.currentWeatherItem}>
-                wind: {currentWeather.wind_speed}
-              </Box>
-              <Box sx={styles.currentWeatherItem}>
-                humidity: {currentWeather.humidity}
-              </Box>
-              <Box sx={styles.currentWeatherItem}>
-                precipitation: {currentWeather.precipitation}
-              </Box>
-            </Box>
-            <Box sx={styles.info}>
-              <InfoIcon fontSize="inherit" sx={styles.infoIcon} />
-              Hover time and day for more information
             </Box>
             <Box sx={styles.chartContainer}>
               <Line options={chartOptions} data={chartData} />
