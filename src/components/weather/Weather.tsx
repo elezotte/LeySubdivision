@@ -3,7 +3,6 @@ import PageIcon from '@mui/icons-material/WbSunnyOutlined'
 import AlertIcon from '@mui/icons-material/WarningAmber'
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
-import MuiTooltip from '@mui/material/Tooltip'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -58,6 +57,8 @@ const Weather: React.FC = () => {
   const [loadingData, setLoadingData] = useState(true)
   const [todayText, setTodayText] = useState('')
   const [weatherAlerts, setWeatherAlerts] = useState<OWAlert[]>([])
+  const [selectedDayIndex, setSelectedDayIndex] = useState<number | null>(null)
+  const [selectedDaySummary, setSelectedDaySummary] = useState<string>('')
 
   const getWeather = useCallback(async () => {
     await fetch('/api/weather', {
@@ -137,9 +138,29 @@ const Weather: React.FC = () => {
       })
   }, []);
 
+  const handleDaySelection = (index: number, summary: string) => {
+    const sameDay = selectedDayIndex === index
+    setSelectedDayIndex(sameDay ? null : index)
+    setSelectedDaySummary(sameDay ? '' : summary)
+  }
+
+  const getDayStyles = (index: number): any => {
+    if (selectedDayIndex === index) {
+      return {
+        ...styles.dayContainer,
+        ...styles.selectedDayContainer,
+      }
+    }
+    return styles.dayContainer
+  }
+
   useEffect(() => {
     getWeather()
   }, [getWeather])
+
+  useEffect(() => {
+    chartDayData[0] && handleDaySelection(0, chartDayData[0].summary)
+  }, [chartDayData]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box sx={commonStyles.pageContent}>
@@ -188,7 +209,7 @@ const Weather: React.FC = () => {
               </Box>
               <Box sx={styles.info}>
                 <InfoIcon fontSize="inherit" sx={styles.infoIcon} />
-                Hover time and day for more information
+                Hover time or select day for more information
               </Box>
             </Box>
             <Box sx={styles.chartContainer}>
@@ -196,20 +217,23 @@ const Weather: React.FC = () => {
             </Box>
             <Box sx={styles.daysContainer}>
               {chartDayData.map((day, index: number) => (
-                <MuiTooltip key={index} title={day.summary}>
-                  <Box sx={styles.dayContainer}>
-                    <Box sx={styles.dayText}>{day.day}</Box>
-                    <Box>
-                      <WeatherIcon wid={day.iconId} />
-                    </Box>
-                    <Box sx={styles.dayTemps}>
-                      <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
-                      {day.temps.high}
-                    </Box>
+                <Box key={index} sx={getDayStyles(index)} onClick={() => handleDaySelection(index, day.summary)}>
+                  <Box sx={styles.dayText}>{day.day}</Box>
+                  <Box>
+                    <WeatherIcon wid={day.iconId} />
                   </Box>
-                </MuiTooltip>
+                  <Box sx={styles.dayTemps}>
+                    <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
+                    {day.temps.high}
+                  </Box>
+                </Box>
               ))}
             </Box>
+            {selectedDaySummary && (
+              <Box sx={styles.daySummary}>
+                {selectedDaySummary}
+              </Box>
+            )}
           </>
         )}
       </Box>

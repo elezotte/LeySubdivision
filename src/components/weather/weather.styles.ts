@@ -5,7 +5,6 @@ export const styles: MuiSxStyles = {
     height: 260,
     marginTop: 0.5,
     backgroundColor: colors.background,
-    borderRadius: 0.5,
     padding: 2,
   },
   container: {
@@ -31,7 +30,7 @@ export const styles: MuiSxStyles = {
     alignItems: 'center',
   },
   dayContainer: {
-    backgroundColor: colors.background,
+    backgroundColor: colors.gray.light,
     paddingX: {
       xs: 0,
       md: 2,
@@ -40,7 +39,6 @@ export const styles: MuiSxStyles = {
       xs: 0,
       md: 1,
     },
-    borderRadius: 0.5,
     flexGrow: 1,
   },
   daysContainer: {
@@ -50,6 +48,21 @@ export const styles: MuiSxStyles = {
     textAlign: 'center',
     gap: 0.5,
     marginTop: 0.5,
+    cursor: 'pointer',
+  },
+  selectedDayContainer: {
+    position: 'relative',
+    backgroundColor: colors.background,
+
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      height: 6,
+      bottom: -4,
+      backgroundColor: colors.background,
+    }
   },
   dayIcon: {
     fontSize: 30,
@@ -59,9 +72,14 @@ export const styles: MuiSxStyles = {
   },
   dayText: {
     fontSize: {
-      xs: font.size.MD,
-      md: font.size.ML,
+      xs: font.size.MS,
+      md: font.size.MD,
     },
+  },
+  daySummary: {
+    backgroundColor: colors.background,
+    padding: 2,
+    marginTop: 0.5,
   },
   dayLowTemp: {
     display: {
@@ -75,18 +93,17 @@ export const styles: MuiSxStyles = {
   },
   info: {
     color: colors.gray.mediumLight,
-    fontSize: font.size.MS,
+    fontSize: font.size.MD,
     marginBottom: 0.5,
     display: 'flex',
     alignItems: 'center',
   },
   infoIcon: {
-    marginRight: 0.25,
+    marginRight: 0.5,
   },
   topInfo: {
     backgroundColor: colors.background,
     padding: 2,
-    borderRadius: 0.5,
   },
   weatherAlert: {
     boxShadow: 'none',
