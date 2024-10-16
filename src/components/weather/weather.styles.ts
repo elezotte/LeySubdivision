@@ -50,6 +50,21 @@ export const styles: MuiSxStyles = {
     textAlign: 'center',
     gap: 0.5,
     marginTop: 0.5,
+    cursor: 'pointer',
+  },
+  selectedDayContainer: {
+    position: 'relative',
+    backgroundColor: colors.gray.light,
+
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      height: 6,
+      bottom: -4,
+      backgroundColor: colors.gray.light,
+    }
   },
   dayIcon: {
     fontSize: 30,
@@ -62,6 +77,12 @@ export const styles: MuiSxStyles = {
       xs: font.size.MD,
       md: font.size.ML,
     },
+  },
+  daySummary: {
+    backgroundColor: colors.gray.light,
+    padding: 2,
+    borderRadius: 0.5,
+    marginTop: 0.5,
   },
   dayLowTemp: {
     display: {
