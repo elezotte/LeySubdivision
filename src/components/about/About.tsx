@@ -122,7 +122,7 @@ const About = (): React.ReactNode => {
               Springs, Salida, Cañon City, and Monarch Mountain Ski Area.
             </Box>
           </Grid>
-          <a href={photos[photoIndex].src} target="_blank">
+          <a href={photos[photoIndex].src} title="view photo" target="_blank">
             <Image
               alt={photos[photoIndex].alt}
               blurDataURL={photos[photoIndex].blur}
