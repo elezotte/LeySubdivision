@@ -121,7 +121,7 @@ export const styles: MuiSxStyles = {
   typeButton: googleButtonStyles,
   typeButtonSelected: {
     ...googleButtonStyles,
-    backgroundColor: colors.gray.xlight,
+    backgroundColor: colors.gray.light,
     color: colors.gray.medium,
 
     '&:hover': {
