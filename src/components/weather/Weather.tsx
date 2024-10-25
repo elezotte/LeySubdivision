@@ -223,8 +223,8 @@ const Weather: React.FC = () => {
                     <WeatherIcon wid={day.iconId} />
                   </Box>
                   <Box sx={styles.dayTemps}>
-                    <Box sx={styles.dayLowTemp}>{day.temps.low}/</Box>
                     {day.temps.high}
+                    <Box sx={styles.dayLowTemp}>/{day.temps.low}</Box>
                   </Box>
                 </Box>
               ))}
