@@ -76,11 +76,10 @@ const theme = createTheme({
           fontFamily: font.family.logo,
           fontSize: font.size.LG,
           fontWeight: font.weight.BOLD,
-          marginBottom: 30,
+          marginBottom: 24,
           marginLeft: -2,
           display: 'flex',
           alignItems: 'center',
-          paddingBottom: 12,
 
           '> svg': {
             fontSize: 30,
@@ -118,10 +117,10 @@ const theme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          minHeight: 50,
+          minHeight: 48,
 
           '@media (min-width: 600px)': {
-            minHeight: 50,
+            minHeight: 48,
           },
         },
       },

@@ -60,7 +60,6 @@ export const styles: MuiSxStyles = {
   },
   map: {
     height: 300,
-    borderTop: `2px solid ${colors.gray.dark}`,
     position: 'relative',
   },
   marker: {
@@ -92,7 +91,6 @@ export const styles: MuiSxStyles = {
     height: '100%',
     backgroundColor: `${colors.gray.dark}88`,
     textShadow: `1px 1px 0 ${colors.gray.dark}`,
-    borderRight: `1px dotted ${colors.gray.dark}`,
     position: 'relative',
 
     '> h1': {

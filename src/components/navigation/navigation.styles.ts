@@ -14,7 +14,7 @@ const commonButtonItemStyles: SxProps = {
   textDecoration: 'none',
   textTransform: 'none',
   lineHeight: 1,
-  minHeight: 52,
+  minHeight: 50,
   color: colors.gray.light,
 }
 
@@ -31,7 +31,7 @@ export const styles: MuiSxStyles = {
     backgroundColor: colors.gray.medium,
     boxShadow: 'none',
     display: 'flex',
-    borderBottom: `2px solid ${colors.gray.dark}`,
+    borderBottom: `3px solid ${colors.gray.dark}`,
   },
   buttonContainer: {
     flexGrow: 1,
