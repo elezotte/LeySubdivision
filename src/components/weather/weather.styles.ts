@@ -3,7 +3,6 @@ import { colors, font, MuiSxStyles } from 'components/theme/themeSettings'
 export const styles: MuiSxStyles = {
   chartContainer: {
     height: 260,
-    marginTop: 0.5,
     backgroundColor: colors.background,
     padding: 2,
   },
@@ -30,7 +29,7 @@ export const styles: MuiSxStyles = {
     alignItems: 'center',
   },
   dayContainer: {
-    backgroundColor: colors.gray.light,
+    backgroundColor: colors.background,
     paddingX: {
       xs: 0,
       md: 2,
@@ -46,21 +45,21 @@ export const styles: MuiSxStyles = {
     fontWeight: font.weight.SEMIBOLD,
     display: 'flex',
     textAlign: 'center',
-    gap: 0.5,
-    marginTop: 0.5,
+    gap: 1,
+    marginTop: 1,
     cursor: 'pointer',
   },
   selectedDayContainer: {
     position: 'relative',
-    backgroundColor: colors.background,
+    color: colors.warning.medium,
 
     '&::after': {
       content: '""',
       position: 'absolute',
       left: 0,
       right: 0,
-      height: 6,
-      bottom: -4,
+      height: 20,
+      bottom: -20,
       backgroundColor: colors.background,
     }
   },
@@ -79,7 +78,7 @@ export const styles: MuiSxStyles = {
   daySummary: {
     backgroundColor: colors.background,
     padding: 2,
-    marginTop: 0.5,
+    marginTop: 1,
   },
   dayLowTemp: {
     display: {
@@ -92,7 +91,7 @@ export const styles: MuiSxStyles = {
     fontWeight: font.weight.SEMIBOLD,
   },
   info: {
-    color: colors.gray.mediumLight,
+    color: colors.gray.medium,
     fontSize: font.size.MD,
     marginBottom: 0.5,
     display: 'flex',
@@ -133,6 +132,6 @@ export const styles: MuiSxStyles = {
     marginBottom: 2,
   },
   weatherContainer: {
-    maxWidth: 840,
+    // borderTop: `8px solid ${colors.gray.mediumLight}`,
   },
 }
