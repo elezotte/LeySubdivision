@@ -21,7 +21,7 @@ interface WeatherIconProps {
   wid: number
 }
 
-const size = 50
+const size = 32
 
 const WeatherIcon: React.FC<WeatherIconProps> = ({ wid }: WeatherIconProps) => {
   const weatherIconMap: {
