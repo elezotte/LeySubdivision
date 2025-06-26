@@ -2,7 +2,13 @@ import { ListIconTypes, ListItem } from 'components/common/itemList/ItemList'
 
 export const meetingItems: ListItem[] = [
   {
-    id: 'meeting-minutes-03/15/20225',
+    id: 'special-meeting-road-improvements-06/14/2025',
+    label: 'Special Meeting - Proposed Road Improvements - 6/14/2025',
+    path: '/documents/meeting-minutes/6_14_2025-ley_subdivision-special-meeting_road-improvements.pdf',
+    iconType: ListIconTypes.DOCUMENT,
+  },
+  {
+    id: 'meeting-minutes-03/15/2025',
     label: 'Meeting Minutes - 3/15/2025',
     path: '/documents/meeting-minutes/3_15_2025-ley_subdivision-meeting_minutes.pdf',
     iconType: ListIconTypes.DOCUMENT,
