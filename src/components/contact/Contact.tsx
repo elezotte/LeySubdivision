@@ -125,7 +125,7 @@ const Contacts = (): React.ReactNode => {
           value={message}
         />
         <Grid container sx={styles.buttons}>
-          <Grid xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Button
               color="secondary"
               disabled={sending}
@@ -135,7 +135,7 @@ const Contacts = (): React.ReactNode => {
               Clear Form
             </Button>
           </Grid>
-          <Grid xs={6} sx={styles.submitButtonContainer}>
+          <Grid size={{ xs: 6 }} sx={styles.submitButtonContainer}>
             {sending && <CircularProgress size={23} sx={styles.sending} />}
             <Button
               color="primary"

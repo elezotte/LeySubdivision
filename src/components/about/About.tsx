@@ -97,8 +97,8 @@ const About = (): React.ReactNode => {
         <title>About the Ley Subdivision</title>
       </Head>
       <Grid container sx={commonStyles.pageContentFull}>
-        <Grid item sx={styles.imageContainer} md={12} xs={12}>
-          <Grid sx={styles.text} md={6} xs={12}>
+        <Grid sx={styles.imageContainer} size={{ md: 12, xs: 12 }}>
+          <Grid sx={styles.text} size={{ md: 6, xs: 12 }}>
             <Typography sx={styles.h1} variant="h1">
               <AboutIcon
                 sx={{ ...styles.h1Icon, ...commonStyles.pageIcon } as any}
