@@ -1,4 +1,4 @@
-import DocumentIcon from '@mui/icons-material/DescriptionOutlined'
+import DocumentIcon from '@mui/icons-material/PictureAsPdf'
 import PhoneIcon from '@mui/icons-material/PhotoOutlined'
 import WebsiteIcon from '@mui/icons-material/Web'
 import Link from '@mui/material/Link'
