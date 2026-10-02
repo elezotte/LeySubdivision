@@ -23,7 +23,6 @@ const Documents = (): React.ReactNode => (
     <ItemList items={neighborhoodDocuments} title="Neighborhood Documents" />
     <ItemList items={custerCountyItems} title="Custer County & Westcliffe" />
     <ItemList items={meetingItems} title="Neighborhood Meetings" />
-    {/* <ItemList items={treasurerItems} title="Treasurer Reports" /> */}
     <ItemList items={historicalItems} title="Historical" />
   </Box>
 )
