@@ -4,6 +4,7 @@ export const commonStyles: MuiSxStyles = {
   pageContent: {
     flex: 1,
     padding: 4,
+    paddingTop: 3,
   },
   pageContentFull: {
     flex: 1,
