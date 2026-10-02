@@ -15,7 +15,7 @@ const commonButtonItemStyles: SxProps = {
   textTransform: 'none',
   lineHeight: 1,
   minHeight: 50,
-  color: colors.gray.light,
+  color: colors.gray.dark,
 }
 
 const commonMenuItemStyles: SxProps = {
@@ -28,7 +28,7 @@ const commonMenuItemStyles: SxProps = {
 export const styles: MuiSxStyles = {
   appBar: {
     paddingX: 3,
-    backgroundColor: colors.gray.medium,
+    backgroundColor: colors.gray.light,
     boxShadow: 'none',
     display: 'flex',
     borderBottom: `3px solid ${colors.gray.dark}`,
@@ -117,19 +117,19 @@ export const styles: MuiSxStyles = {
     borderBottomColor: 'transparent',
 
     '&:hover': {
-      color: colors.background,
+      color: colors.gray.medium,
     },
   },
   selectedMenu: {
-    backgroundColor: colors.gray.light,
+    backgroundColor: colors.gray.medium,
     '&:hover': {
-      backgroundColor: colors.gray.light,
+      backgroundColor: colors.gray.medium,
     },
     ...commonMenuItemStyles,
   },
   notSelectedMenu: {
     '&:hover': {
-      backgroundColor: colors.gray.xlight,
+      backgroundColor: colors.gray.medium,
     },
     ...commonMenuItemStyles,
   },
