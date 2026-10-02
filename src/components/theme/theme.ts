@@ -91,6 +91,7 @@ const theme = createTheme({
           fontSize: font.size.ML,
           fontWeight: font.weight.SEMIBOLD,
           marginBottom: '12px',
+          fontStyle: 'italic',
         },
         body1: {
           color: colors.gray.dark,
