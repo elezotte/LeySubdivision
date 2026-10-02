@@ -1,6 +1,6 @@
 import DocumentIcon from '@mui/icons-material/DescriptionOutlined'
 import PhoneIcon from '@mui/icons-material/PhotoOutlined'
-import WebsiteIcon from '@mui/icons-material/Wysiwyg'
+import WebsiteIcon from '@mui/icons-material/Web'
 import Link from '@mui/material/Link'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
