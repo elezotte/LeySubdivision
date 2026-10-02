@@ -7,19 +7,33 @@ export const custerCountyItems: ListItem[] = [
     path: '/documents/custer-county/custer-county-noxious-weed-spray-reimbursement-form.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
-  {
-    id: 'colorado-state-custer-county-noxious-weed-program',
-    label: 'Colorado State Custer County Noxious Weed Program',
-    path: 'http://www.custercountygov.com/ext/extpage.php?id=noxious_weeds',
-    iconType: ListIconTypes.WEBSITE,
-    rel: 'external'
-  },
+  // {
+  //   id: 'colorado-state-custer-county-noxious-weed-program',
+  //   label: 'Colorado State Custer County Noxious Weed Program',
+  //   path: 'http://www.custercountygov.com/ext/extpage.php?id=noxious_weeds',
+  //   iconType: ListIconTypes.WEBSITE,
+  //   rel: 'external'
+  // },
   {
     id: 'colorado-beginners-guide-to-well-permits',
     label: 'Colorado Beginners Guide to Well Permits',
     path: '/documents/custer-county/colorado-beginners-guide-to-well-permits.pdf',
     iconType: ListIconTypes.DOCUMENT,
   },
+    {
+    id: 'colorado-water-rights-exempt-wells',
+    label: 'Colorado Water Rights Exempt Wells',
+    path: 'https://cowaterrights.com/exempt-wells/',
+    iconType: ListIconTypes.WEBSITE,
+    rel: 'external'
+  },
+  // {
+  //   id: 'colorado-dwr-well-permitting',
+  //   label: 'Colorado Division of Water Resources Well Permitting',
+  //   path: 'https://dwr.colorado.gov/services/well-permitting',
+  //   iconType: ListIconTypes.WEBSITE,
+  //   rel: 'external'
+  // },
   {
     id: 'custer-county-zoning-districts',
     label: 'Custer County Subdivisions and Zoning Districts',
