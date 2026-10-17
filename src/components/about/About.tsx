@@ -8,13 +8,13 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { reactStyles, styles } from './about.styles'
 import { MapChangeProps, MapTypeText, MapTypes, mapProps } from './map.config'
-import blur1 from './blur/photo1.blur'
-import blur2 from './blur/photo2.blur'
-import blur3 from './blur/photo3.blur'
-import blur4 from './blur/photo4.blur'
-import blur5 from './blur/photo5.blur'
-import blur6 from './blur/photo6.blur'
-import blur7 from './blur/photo7.blur'
+// import blur1 from './blur/photo1.blur'
+// import blur2 from './blur/photo2.blur'
+// import blur3 from './blur/photo3.blur'
+// import blur4 from './blur/photo4.blur'
+// import blur5 from './blur/photo5.blur'
+// import blur6 from './blur/photo6.blur'
+// import blur7 from './blur/photo7.blur'
 
 const getTypeStyles = (selectedType: MapTypes, buttonType: MapTypes) => {
   return selectedType === buttonType
@@ -32,37 +32,87 @@ const photos = [
   {
     alt: 'Rainbow in the Ley Subdivision',
     src: '/images/photo1.jpg',
-    blur: blur1
+    // blur: blur1
   },
   {
     alt: 'Moody clouds over the Ley Subdivision',
     src: '/images/photo2.jpg',
-    blur: blur2
+    // blur: blur2
   },
   {
     alt: 'Arial of the Wet Mountain Valley',
     src: '/images/photo3.jpg',
-    blur: blur3
+    // blur: blur3
   },
   {
     alt: 'Mountain view from the Ley Subdivision',
     src: '/images/photo4.jpg',
-    blur: blur4
+    // blur: blur4
   },
   {
     alt: 'Mountain view coming into Westcliffe',
     src: '/images/photo5.jpg',
-    blur: blur5
+    // blur: blur5
   },
   {
     alt: 'Horn Peak from the Ley Subdivision',
     src: '/images/photo6.jpg',
-    blur: blur6
+    // blur: blur6
   },
   {
     alt: 'Arial of the Ley Subdivision and Sangre De Cristo mountains',
     src: '/images/photo7.jpg',
-    blur: blur7
+    // blur: blur7
+  },
+  {
+    alt: 'Nighthawk way in the Ley Subdivision',
+    src: '/images/photo8.jpg',
+    // blur: blur8
+  },
+  {
+    alt: 'A beautiful sunset in the Ley Subdivision',
+    src: '/images/photo9.jpg',
+    // blur: blur9
+  },
+  {
+    alt: 'A scenic sunset in the Ley Subdivision',
+    src: '/images/photo10.jpg',
+    // blur: blur10
+  },
+  {
+    alt: 'A clear sunrise in the Ley Subdivision',
+    src: '/images/photo11.jpg',
+    // blur: blur11
+  },
+  {
+    alt: 'A rainbow over the Sangre De Cristo mountains',
+    src: '/images/photo12.jpg',
+    // blur: blur12
+  },
+  {
+    alt: 'Crisp morning light on the Sangre De Cristo mountains',
+    src: '/images/photo13.jpg',
+    // blur: blur13
+  },
+  {
+    alt: 'Colorful morning clouds',
+    src: '/images/photo14.jpg',
+    // blur: blur14
+  },
+  {
+    alt: 'Clouds and mountains',
+    src: '/images/photo15.jpg',
+    // blur: blur15
+  },
+  {
+    alt: 'A full rainbow over 136',
+    src: '/images/photo16.jpg',
+    // blur: blur16
+  },
+  {
+    alt: 'Clouds clearing after the storm',
+    src: '/images/photo17.jpg',
+    // blur: blur17
   },
 ]
 
@@ -125,9 +175,9 @@ const About = (): React.ReactNode => {
           <a href={photos[photoIndex].src} title="view photo" target="_blank">
             <Image
               alt={photos[photoIndex].alt}
-              blurDataURL={photos[photoIndex].blur}
+              // blurDataURL={photos[photoIndex].blur}
               fill
-              placeholder="blur"
+              // placeholder="blur"
               priority
               src={photos[photoIndex].src}
               style={reactStyles.image}
